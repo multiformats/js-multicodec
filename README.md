@@ -8,13 +8,6 @@
 
 This repo is a stub. Please refer to the issues if you have any questions.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contribute](#contribute)
-- [License](#license)
-
 ## Maintainers
 
 Captain: [@diasdavid](https://github.com/diasdavid).
