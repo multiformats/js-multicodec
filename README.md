@@ -12,6 +12,44 @@ This repo is a stub. Please refer to the issues if you have any questions.
 
 Captain: [@diasdavid](https://github.com/diasdavid).
 
+## Example
+
+```JavaScript
+
+const mcp = require('multicodec-packed')
+
+const prefixedProtobuf = mcp.addPrefix('protobuf', protobufBuffer)
+// prefixedProtobuf 0x50...
+```
+
+## Usage
+
+### Install
+
+```sh
+> npm install multicodec-packed
+```
+
+```JavaScript
+const mcp = require('multicodec-packed')
+```
+
+### API
+
+#### `mcp.addPrefix(<multicodecStrOrCode>, <data>)`
+
+> Prefixes a buffer with a multicodec-packed
+
+#### `mcp.rmPrefix(<prefixedData>)`
+
+> Decapsulate the multicodec-packed prefix from the data
+
+#### `mcp.getMulticodec(<prefixedData>)`
+
+> Get the multicodec of the prefixedData
+
+## [multicodec-packed default table](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)
+
 ## Contribute
 
 Contributions welcome. Please check out [the issues](https://github.com/multiformats/js-multihash/issues).
