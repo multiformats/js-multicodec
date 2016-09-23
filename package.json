@@ -1,0 +1,34 @@
+{
+  "name": "multicodec-packed",
+  "version": "0.0.0",
+  "description": "JavaScript implementation of the multicodec-packed specification",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/multiformats/js-multicodec-packed.git"
+  },
+  "keywords": [
+    "IPFS",
+    "multiformats",
+    "multicodec",
+    "binary",
+    "packed",
+    "the",
+    "data!"
+  ],
+  "author": "David Dias <daviddias@ipfs.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/multiformats/js-multicodec-packed/issues"
+  },
+  "homepage": "https://github.com/multiformats/js-multicodec-packed#readme",
+  "dependencies": {
+    "varint": "^4.0.1"
+  }
+}
