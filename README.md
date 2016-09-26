@@ -1,12 +1,10 @@
-# js-multicodec-packed
+# js-multicodec
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
 [![](https://img.shields.io/badge/project-multiformats-blue.svg?style=flat-square)](http://github.com/multiformats/multiformats)
 [![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
 
-> JavaScript implementation of the multicodec-packed specification
-
-This repo is a stub. Please refer to the issues if you have any questions.
+> JavaScript implementation of the multicodec specification
 
 ## Maintainers
 
@@ -16,9 +14,9 @@ Captain: [@diasdavid](https://github.com/diasdavid).
 
 ```JavaScript
 
-const mcp = require('multicodec-packed')
+const multicodec = require('multicodec')
 
-const prefixedProtobuf = mcp.addPrefix('protobuf', protobufBuffer)
+const prefixedProtobuf = multicodec.addPrefix('protobuf', protobufBuffer)
 // prefixedProtobuf 0x50...
 ```
 
@@ -27,28 +25,28 @@ const prefixedProtobuf = mcp.addPrefix('protobuf', protobufBuffer)
 ### Install
 
 ```sh
-> npm install multicodec-packed
+> npm install multicodec
 ```
 
 ```JavaScript
-const mcp = require('multicodec-packed')
+const multicodec = require('multicodec')
 ```
 
 ### API
 
-#### `mcp.addPrefix(<multicodecStrOrCode>, <data>)`
+#### `multicodec.addPrefix(<multicodecStrOrCode>, <data>)`
 
 > Prefixes a buffer with a multicodec-packed
 
-#### `mcp.rmPrefix(<prefixedData>)`
+#### `multicodec.rmPrefix(<prefixedData>)`
 
 > Decapsulate the multicodec-packed prefix from the data
 
-#### `mcp.getMulticodec(<prefixedData>)`
+#### `multicodec.getCodec(<prefixedData>)`
 
-> Get the multicodec of the prefixedData
+> Get the codec of the prefixedData
 
-## [multicodec-packed default table](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)
+## [multicodec default table](https://github.com/multiformats/multicodec/blob/master/multicodec.md)
 
 ## Contribute
 

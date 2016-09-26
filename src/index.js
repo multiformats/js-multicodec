@@ -25,7 +25,7 @@ exports.rmPrefix = (data) => {
   return data.slice(varint.decode.bytes)
 }
 
-exports.getMulticodec = (prefixedData) => {
+exports.getCodec = (prefixedData) => {
   const code = new Buffer(varint.decode(prefixedData))
   Object.keys(table)
         .forEach((multicodec) => {
