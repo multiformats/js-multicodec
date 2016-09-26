@@ -1,14 +1,25 @@
 {
-  "name": "multicodec-packed",
+  "name": "multicodec",
   "version": "0.0.0",
   "description": "JavaScript implementation of the multicodec-packed specification",
-  "main": "src/index.js",
-  "directories": {
-    "test": "test"
-  },
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "aegir-lint",
+    "test": "aegir-test",
+    "test:node": "aegir-test node",
+    "test:browser": "aegir-test browser",
+    "build": "aegir-build",
+    "release": "aegir-release",
+    "release-minor": "aegir-release --type minor",
+    "release-major": "aegir-release --type major",
+    "coverage": "aegir-coverage",
+    "coverage-publish": "aegir-coverage publish"
   },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/multiformats/js-multicodec-packed.git"
@@ -30,5 +41,9 @@
   "homepage": "https://github.com/multiformats/js-multicodec-packed#readme",
   "dependencies": {
     "varint": "^4.0.1"
+  },
+  "devDependencies": {
+    "aegir": "^8.1.1",
+    "pre-commit": "^1.1.3"
   }
 }

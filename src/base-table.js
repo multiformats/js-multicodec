@@ -1,3 +1,5 @@
+'use strict'
+
 const varint = require('varint')
 
 exports = module.exports
