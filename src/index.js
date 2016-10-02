@@ -26,8 +26,8 @@ exports.rmPrefix = (data) => {
 }
 
 exports.getCodec = (prefixedData) => {
-  const code = new Buffer(varint.decode(prefixedData))
-
+  const v = varint.decode(prefixedData)
+  const code = new Buffer(v.toString(16), 'hex')
   let codec
 
   Object.keys(table)
