@@ -27,10 +27,15 @@ exports.rmPrefix = (data) => {
 
 exports.getCodec = (prefixedData) => {
   const code = new Buffer(varint.decode(prefixedData))
+
+  let codec
+
   Object.keys(table)
-        .forEach((multicodec) => {
-          if (Buffer.isEqual(code, table[multicodec])) {
-            return multicodec
+        .forEach((mc) => {
+          if (code.equals(table[mc])) {
+            codec = mc
           }
         })
+
+  return codec
 }
