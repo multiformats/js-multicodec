@@ -31,9 +31,10 @@ exports.getCodec = (prefixedData) => {
   let codec
 
   Object.keys(table)
-        .forEach((mc) => {
+        .some(mc => {
           if (code.equals(table[mc])) {
             codec = mc
+            return
           }
         })
 
