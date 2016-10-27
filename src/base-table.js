@@ -40,6 +40,7 @@ exports['dag-pb'] = new Buffer('70', 'hex')
 exports['dag-cbor'] = new Buffer('71', 'hex')
 exports['eth-block'] = new Buffer('90', 'hex')
 exports['eth-tx'] = new Buffer('91', 'hex')
+exports['eth-account'] = new Buffer('92', 'hex')
 
 function varintBuf (n) {
   return new Buffer(varint.encode(n))
