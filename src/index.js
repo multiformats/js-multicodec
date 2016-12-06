@@ -1,24 +1,24 @@
 'use strict'
-
-const table = require('./base-table')
 const varint = require('varint')
+const codecNameToCodeVarint = require('./varint-table')
+const codeToCodecName = require('./name-table')
+const util = require('./util')
 
 exports = module.exports
 
 exports.addPrefix = (multicodecStrOrCode, data) => {
-  let pfx
+  let prefix
 
   if (Buffer.isBuffer(multicodecStrOrCode)) {
-    pfx = multicodecStrOrCode
+    prefix = util.varintBufferEncode(multicodecStrOrCode)
   } else {
-    if (table[multicodecStrOrCode]) {
-      pfx = table[multicodecStrOrCode]
+    if (codecNameToCodeVarint[multicodecStrOrCode]) {
+      prefix = codecNameToCodeVarint[multicodecStrOrCode]
     } else {
       throw new Error('multicodec not recognized')
     }
   }
-  let encodedPrefix = new Buffer(varint.encode(bufferToNumber(pfx)))
-  return Buffer.concat([encodedPrefix, data])
+  return Buffer.concat([prefix, data])
 }
 
 exports.rmPrefix = (data) => {
@@ -27,29 +27,8 @@ exports.rmPrefix = (data) => {
 }
 
 exports.getCodec = (prefixedData) => {
-  const v = varint.decode(prefixedData)
-  const code = numberToBuffer(v)
-  let codec
-
-  Object.keys(table)
-        .some(mc => {
-          if (code.equals(table[mc])) {
-            codec = mc
-            return
-          }
-        })
-
-  return codec
+  const code = util.varintBufferDecode(prefixedData)
+  const codecName = codeToCodecName[code.toString('hex')]
+  return codecName
 }
 
-function bufferToNumber (buf) {
-  return parseInt(buf.toString('hex'), 16)
-}
-
-function numberToBuffer (num) {
-  let hexString = num.toString(16)
-  if (hexString.length % 2 === 1) {
-    hexString = '0' + hexString
-  }
-  return new Buffer(hexString, 'hex')
-}
