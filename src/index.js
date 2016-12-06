@@ -1,23 +1,24 @@
 'use strict'
-
-const table = require('./base-table')
 const varint = require('varint')
+const codecNameToCodeVarint = require('./varint-table')
+const codeToCodecName = require('./name-table')
+const util = require('./util')
 
 exports = module.exports
 
 exports.addPrefix = (multicodecStrOrCode, data) => {
-  let pfx
+  let prefix
 
   if (Buffer.isBuffer(multicodecStrOrCode)) {
-    pfx = multicodecStrOrCode
+    prefix = util.varintBufferEncode(multicodecStrOrCode)
   } else {
-    if (table[multicodecStrOrCode]) {
-      pfx = table[multicodecStrOrCode]
+    if (codecNameToCodeVarint[multicodecStrOrCode]) {
+      prefix = codecNameToCodeVarint[multicodecStrOrCode]
     } else {
       throw new Error('multicodec not recognized')
     }
   }
-  return Buffer.concat([pfx, data])
+  return Buffer.concat([prefix, data])
 }
 
 exports.rmPrefix = (data) => {
@@ -26,17 +27,8 @@ exports.rmPrefix = (data) => {
 }
 
 exports.getCodec = (prefixedData) => {
-  const v = varint.decode(prefixedData)
-  const code = new Buffer(v.toString(16), 'hex')
-  let codec
-
-  Object.keys(table)
-        .some(mc => {
-          if (code.equals(table[mc])) {
-            codec = mc
-            return
-          }
-        })
-
-  return codec
+  const code = util.varintBufferDecode(prefixedData)
+  const codecName = codeToCodecName[code.toString('hex')]
+  return codecName
 }
+
