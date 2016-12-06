@@ -18,4 +18,11 @@ describe('multicodec', () => {
     expect(multicodec.getCodec(prefixedBuf)).to.equal('dag-pb')
     expect(buf).to.eql(multicodec.rmPrefix(prefixedBuf))
   })
+
+  it('add multibyte varint prefix (eth-block) through multicodec (string)', () => {
+    const buf = new Buffer('hey')
+    const prefixedBuf = multicodec.addPrefix('eth-block', buf)
+    expect(multicodec.getCodec(prefixedBuf)).to.equal('eth-block')
+    expect(buf).to.eql(multicodec.rmPrefix(prefixedBuf))
+  })
 })

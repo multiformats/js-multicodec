@@ -17,7 +17,8 @@ exports.addPrefix = (multicodecStrOrCode, data) => {
       throw new Error('multicodec not recognized')
     }
   }
-  return Buffer.concat([pfx, data])
+  let encodedPrefix = new Buffer(varint.encode(bufferToNumber(pfx)))
+  return Buffer.concat([encodedPrefix, data])
 }
 
 exports.rmPrefix = (data) => {
@@ -27,7 +28,7 @@ exports.rmPrefix = (data) => {
 
 exports.getCodec = (prefixedData) => {
   const v = varint.decode(prefixedData)
-  const code = new Buffer(v.toString(16), 'hex')
+  const code = numberToBuffer(v)
   let codec
 
   Object.keys(table)
@@ -39,4 +40,16 @@ exports.getCodec = (prefixedData) => {
         })
 
   return codec
+}
+
+function bufferToNumber (buf) {
+  return parseInt(buf.toString('hex'), 16)
+}
+
+function numberToBuffer (num) {
+  let hexString = num.toString(16)
+  if (hexString.length % 2 === 1) {
+    hexString = '0' + hexString
+  }
+  return new Buffer(hexString, 'hex')
 }
