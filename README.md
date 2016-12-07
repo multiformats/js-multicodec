@@ -34,18 +34,6 @@ const multicodec = require('multicodec')
 
 ### API
 
-#### `multicodec.addPrefix(<multicodecStrOrCode>, <data>)`
-
-> Prefixes a buffer with a multicodec-packed
-
-#### `multicodec.rmPrefix(<prefixedData>)`
-
-> Decapsulate the multicodec-packed prefix from the data
-
-#### `multicodec.getCodec(<prefixedData>)`
-
-> Get the codec of the prefixedData
-
 ## [multicodec default table](https://github.com/multiformats/multicodec/blob/master/multicodec.md)
 
 ## Contribute
