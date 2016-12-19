@@ -68,7 +68,7 @@ exports['onion'] = new Buffer('01bc', 'hex')
 exports['dag-pb'] = new Buffer('70', 'hex')
 exports['dag-cbor'] = new Buffer('71', 'hex')
 
-exports['eth-block '] = new Buffer('90', 'hex')
+exports['eth-block'] = new Buffer('90', 'hex')
 exports['eth-block-list'] = new Buffer('91', 'hex')
 exports['eth-tx-trie'] = new Buffer('92', 'hex')
 exports['eth-tx'] = new Buffer('93', 'hex')
