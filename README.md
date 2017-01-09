@@ -30,6 +30,10 @@ const prefixedProtobuf = multicodec.addPrefix('protobuf', protobufBuffer)
 // prefixedProtobuf 0x50...
 ```
 
+## API
+
+https://multiformats.github.io/js-multicodec/
+
 ## [multicodec default table](https://github.com/multiformats/multicodec/blob/master/table.csv)
 
 ## Maintainers
