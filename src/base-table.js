@@ -17,6 +17,7 @@ exports['base10'] = new Buffer('09', 'hex')
 exports['protobuf'] = new Buffer('50', 'hex')
 exports['cbor'] = new Buffer('51', 'hex')
 exports['rlp'] = new Buffer('60', 'hex')
+exports['bencode'] = new Buffer('63', 'hex')
 
 // Multiformats
 exports['multicodec'] = new Buffer('30', 'hex')
@@ -80,5 +81,9 @@ exports['eth-storage-trie'] = new Buffer('98', 'hex')
 
 exports['bitcoin-block'] = new Buffer('b0', 'hex')
 exports['bitcoin-tx'] = new Buffer('b1', 'hex')
+
 exports['stellar-block'] = new Buffer('d0', 'hex')
 exports['stellar-tx'] = new Buffer('d1', 'hex')
+
+exports['torrent-info'] = new Buffer('7b', 'hex')
+exports['torrent-file'] = new Buffer('7c', 'hex')
