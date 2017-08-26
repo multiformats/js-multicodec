@@ -64,6 +64,7 @@ exports['onion'] = new Buffer('01bc', 'hex')
 // video formats
 
 // VCS formats
+exports['git-raw'] = new Buffer('78', 'hex')
 
 // IPLD formats
 exports['dag-pb'] = new Buffer('70', 'hex')
