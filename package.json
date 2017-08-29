@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "aegir": "^11.0.2",
-    "chai": "^4.1.0",
+    "chai": "^4.1.1",
     "dirty-chai": "^2.0.1",
     "pre-commit": "^1.2.2"
   },
