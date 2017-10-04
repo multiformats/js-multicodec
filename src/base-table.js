@@ -9,7 +9,6 @@ exports['raw'] = new Buffer('55', 'hex')
 
 // bases encodings
 exports['base1'] = new Buffer('01', 'hex')
-exports['base2'] = new Buffer('55', 'hex')
 exports['base8'] = new Buffer('07', 'hex')
 exports['base10'] = new Buffer('09', 'hex')
 
