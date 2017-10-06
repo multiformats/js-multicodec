@@ -5,7 +5,7 @@
 exports = module.exports
 
 // Miscellaneous
-exports['bin'] = Buffer.from('55', 'hex')
+exports['raw'] = Buffer.from('55', 'hex')
 
 // bases encodings
 exports['base1'] = Buffer.from('01', 'hex')
