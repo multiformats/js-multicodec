@@ -17,11 +17,11 @@ function numberToBuffer (num) {
   if (hexString.length % 2 === 1) {
     hexString = '0' + hexString
   }
-  return new Buffer(hexString, 'hex')
+  return Buffer.from(hexString, 'hex')
 }
 
 function varintBufferEncode (input) {
-  return new Buffer(varint.encode(bufferToNumber(input)))
+  return Buffer.from(varint.encode(bufferToNumber(input)))
 }
 
 function varintBufferDecode (input) {

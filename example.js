@@ -2,7 +2,7 @@
 
 const multicodec = require('multicodec')
 
-const prefixedProtobuf = multicodec.addPrefix('protobuf', new Buffer('some protobuf code'))
+const prefixedProtobuf = multicodec.addPrefix('protobuf', Buffer.from('some protobuf code'))
 
 console.log(prefixedProtobuf)
 // => prefixedProtobuf 0x50...
