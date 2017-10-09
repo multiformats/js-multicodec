@@ -8,9 +8,9 @@ exports = module.exports
 exports['raw'] = Buffer.from('55', 'hex')
 
 // bases encodings
-exports['base1'] = new Buffer('01', 'hex')
-exports['base8'] = new Buffer('07', 'hex')
-exports['base10'] = new Buffer('09', 'hex')
+exports['base1'] = Buffer.from('01', 'hex')
+exports['base8'] = Buffer.from('07', 'hex')
+exports['base10'] = Buffer.from('09', 'hex')
 
 // Serialization formats
 exports['protobuf'] = Buffer.from('50', 'hex')
