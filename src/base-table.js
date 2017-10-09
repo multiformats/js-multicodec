@@ -9,7 +9,6 @@ exports['raw'] = Buffer.from('55', 'hex')
 
 // bases encodings
 exports['base1'] = Buffer.from('01', 'hex')
-exports['base2'] = Buffer.from('55', 'hex')
 exports['base8'] = Buffer.from('07', 'hex')
 exports['base10'] = Buffer.from('09', 'hex')
 
