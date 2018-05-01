@@ -30,7 +30,6 @@
     "the",
     "data!"
   ],
-  "author": "David Dias <daviddias@ipfs.io>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/multiformats/js-multicodec/issues"
@@ -42,8 +41,7 @@
   "devDependencies": {
     "aegir": "^13.1.0",
     "chai": "^4.1.2",
-    "dirty-chai": "^2.0.1",
-    "pre-commit": "^1.2.2"
+    "dirty-chai": "^2.0.1"
   },
   "contributors": [
     "David Dias <daviddias.p@gmail.com>",
