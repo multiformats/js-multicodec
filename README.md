@@ -58,10 +58,6 @@ https://multiformats.github.io/js-multicodec/
 
 ## [multicodec default table](https://github.com/multiformats/multicodec/blob/master/table.csv)
 
-## Maintainers
-
-Captain: [@diasdavid](https://github.com/diasdavid).
-
 ## Contribute
 
 Contributions welcome. Please check out [the issues](https://github.com/multiformats/js-multicodec/issues).
