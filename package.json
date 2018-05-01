@@ -2,7 +2,7 @@
   "name": "multicodec",
   "version": "0.2.6",
   "description": "JavaScript implementation of the multicodec specification",
-  "lead-maintainer": "Henrique Dias <hacdias@gmail.com>",
+  "leadMaintainer": "Henrique Dias <hacdias@gmail.com>",
   "main": "src/index.js",
   "scripts": {
     "lint": "aegir lint",
@@ -17,10 +17,6 @@
     "coverage": "aegir coverage",
     "coverage-publish": "aegir coverage --provider coveralls"
   },
-  "pre-commit": [
-    "lint",
-    "test"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/multiformats/js-multicodec.git"
