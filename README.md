@@ -9,6 +9,14 @@
 
 > JavaScript implementation of the multicodec specification
 
+## Lead Maintainer
+
+[Henrique Dias](http://github.com/hacdias)
+
+## Table of Contents
+
+TODO™
+
 ## Install
 
 ```sh
