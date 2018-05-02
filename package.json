@@ -17,6 +17,10 @@
     "coverage": "aegir coverage",
     "coverage-publish": "aegir coverage --provider coveralls"
   },
+  "pre-push": [
+    "lint",
+    "test"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/multiformats/js-multicodec.git"
@@ -41,6 +45,7 @@
   "devDependencies": {
     "aegir": "^12.3.0",
     "chai": "^4.1.2",
+    "pre-push": "^0.1.1",
     "dirty-chai": "^2.0.1"
   },
   "contributors": [
