@@ -9,6 +9,14 @@
 
 > JavaScript implementation of the multicodec specification
 
+## Lead Maintainer
+
+[Henrique Dias](http://github.com/hacdias)
+
+## Table of Contents
+
+TODO™
+
 ## Install
 
 ```sh
@@ -49,10 +57,6 @@ Updating the lookup table is a manual process. The source of truth is the
 https://multiformats.github.io/js-multicodec/
 
 ## [multicodec default table](https://github.com/multiformats/multicodec/blob/master/table.csv)
-
-## Maintainers
-
-Captain: [@diasdavid](https://github.com/diasdavid).
 
 ## Contribute
 

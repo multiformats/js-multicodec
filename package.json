@@ -2,6 +2,7 @@
   "name": "multicodec",
   "version": "0.2.6",
   "description": "JavaScript implementation of the multicodec specification",
+  "leadMaintainer": "Henrique Dias <hacdias@gmail.com>",
   "main": "src/index.js",
   "scripts": {
     "lint": "aegir lint",
@@ -16,7 +17,7 @@
     "coverage": "aegir coverage",
     "coverage-publish": "aegir coverage --provider coveralls"
   },
-  "pre-commit": [
+  "pre-push": [
     "lint",
     "test"
   ],
@@ -33,7 +34,6 @@
     "the",
     "data!"
   ],
-  "author": "David Dias <daviddias@ipfs.io>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/multiformats/js-multicodec/issues"
@@ -45,8 +45,8 @@
   "devDependencies": {
     "aegir": "^12.3.0",
     "chai": "^4.1.2",
-    "dirty-chai": "^2.0.1",
-    "pre-commit": "^1.2.2"
+    "pre-push": "^0.1.1",
+    "dirty-chai": "^2.0.1"
   },
   "contributors": [
     "David Dias <daviddias.p@gmail.com>",
