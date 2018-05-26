@@ -28,4 +28,17 @@ describe('multicodec', () => {
     expect(multicodec.getCodec(prefixedBuf)).to.equal('eth-block')
     expect(buf).to.eql(multicodec.rmPrefix(prefixedBuf))
   })
+
+  it('returns code via codec name', () => {
+    const code = multicodec.getCodeVarint('keccak-256')
+    expect(code).to.eql(Buffer.from('1b', 'hex'))
+  })
+
+  it('throws error on unknown codec name when getting the code', () => {
+    expect(() => {
+      multicodec.getCodeVarint('this-codec-doesnt-exist')
+    }).to.throw(
+      'Codec `this-codec-doesnt-exist` not found'
+    )
+  })
 })

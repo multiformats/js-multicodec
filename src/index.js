@@ -61,3 +61,16 @@ exports.getCodec = (prefixedData) => {
   const codecName = codeToCodecName[code.toString('hex')]
   return codecName
 }
+
+/**
+ * Get the code as varint of a codec name.
+ * @param {string} codecName
+ * @returns {Buffer}
+ */
+exports.getCodeVarint = (codecName) => {
+  const code = codecNameToCodeVarint[codecName]
+  if (code === undefined) {
+    throw new Error('Codec `' + codecName + '` not found')
+  }
+  return code
+}
