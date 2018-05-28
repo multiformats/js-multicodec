@@ -59,6 +59,9 @@ exports.rmPrefix = (data) => {
 exports.getCodec = (prefixedData) => {
   const code = util.varintBufferDecode(prefixedData)
   const codecName = codeToCodecName[code.toString('hex')]
+  if (codecName === undefined) {
+    throw new Error('Code `0x' + code.toString('hex') + '` not found')
+  }
   return codecName
 }
 

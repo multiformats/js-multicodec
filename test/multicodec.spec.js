@@ -41,4 +41,16 @@ describe('multicodec', () => {
       'Codec `this-codec-doesnt-exist` not found'
     )
   })
+
+  it('throws error on unknown codec name when getting the codec', () => {
+    const code = Buffer.from('ffee', 'hex')
+
+    const buf = Buffer.from('hey')
+    const prefixedBuf = multicodec.addPrefix(code, buf)
+    expect(() => {
+      multicodec.getCodec(prefixedBuf)
+    }).to.throw(
+      'Code `0xffee` not found'
+    )
+  })
 })
