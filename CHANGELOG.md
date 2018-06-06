@@ -1,3 +1,19 @@
+<a name="0.2.7"></a>
+## [0.2.7](https://github.com/multiformats/js-multicodec/compare/v0.2.6...v0.2.7) (2018-06-06)
+
+
+### Bug Fixes
+
+* throw error instead of returning `undefined` ([9859a71](https://github.com/multiformats/js-multicodec/commit/9859a71))
+
+
+### Features
+
+* add codec name to codec code helper ([46e0e02](https://github.com/multiformats/js-multicodec/commit/46e0e02))
+* make adding a custom codec possible ([c6ee55b](https://github.com/multiformats/js-multicodec/commit/c6ee55b))
+
+
+
 <a name="0.2.6"></a>
 ## [0.2.6](https://github.com/multiformats/js-multicodec/compare/v0.2.5...v0.2.6) (2018-01-20)
 
