@@ -15,7 +15,10 @@
 
 ## Table of Contents
 
-TODO™
+- [Install](#install)
+- [Usage](#usage)
+- [Contribute](#contribute)
+- [License](#license)
 
 ## Install
 
@@ -39,6 +42,12 @@ const prefixedProtobuf = multicodec.addPrefix('protobuf', protobufBuffer)
 // prefixedProtobuf 0x50...
 ```
 
+### API
+
+https://multiformats.github.io/js-multicodec/
+
+[multicodec default table](https://github.com/multiformats/multicodec/blob/master/table.csv)
+
 ## Updating the lookup table
 
 Updating the lookup table is a manual process. The source of truth is the
@@ -46,17 +55,11 @@ Updating the lookup table is a manual process. The source of truth is the
 
  - Create a basic draft version
 
-    curl -X GET https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv|awk -f tools/update-table.awk > /tmp/draft.js
+    `curl -X GET https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv|awk -f tools/update-table.awk > /tmp/draft.js`
 
  - Diff it with your tool of choice (e.g. [Meld](http://meldmerge.org/)) and apply the changes
 
-     meld /tmp/draft.js base-table.js
-
-## API
-
-https://multiformats.github.io/js-multicodec/
-
-## [multicodec default table](https://github.com/multiformats/multicodec/blob/master/table.csv)
+     `meld /tmp/draft.js base-table.js`
 
 ## Contribute
 
