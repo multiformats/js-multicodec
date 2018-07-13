@@ -17,6 +17,7 @@
 
 - [Install](#install)
 - [Usage](#usage)
+- [Updating the lookup table](#updating-the-lookup-table)
 - [Contribute](#contribute)
 - [License](#license)
 
