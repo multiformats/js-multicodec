@@ -1,3 +1,23 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/multiformats/js-multicodec/compare/v0.2.7...v0.3.0) (2018-12-18)
+
+
+### Bug Fixes
+
+* lint ([ac53866](https://github.com/multiformats/js-multicodec/commit/ac53866))
+
+
+### Chores
+
+* update the base table ([785519c](https://github.com/multiformats/js-multicodec/commit/785519c))
+
+
+### BREAKING CHANGES
+
+* 'murmur3' is now called 'murmur3-128'
+
+
+
 <a name="0.2.7"></a>
 ## [0.2.7](https://github.com/multiformats/js-multicodec/compare/v0.2.6...v0.2.7) (2018-06-06)
 
