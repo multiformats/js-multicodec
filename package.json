@@ -45,7 +45,7 @@
   "devDependencies": {
     "aegir": "^17.1.1",
     "chai": "^4.2.0",
-    "pre-push": "^0.1.1",
+    "pre-push": "~0.1.1",
     "dirty-chai": "^2.0.1"
   },
   "contributors": [
