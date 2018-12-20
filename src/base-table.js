@@ -1,33 +1,27 @@
+// THIS FILE IS GENERATED, DO NO EDIT MANUALLY
+// For more information see the README.md
+/* eslint-disable dot-notation */
 'use strict'
 
-// spec and table at: https://github.com/multiformats/multicodec
-
-exports = module.exports
-
-// Miscellaneous
+// miscellaneous
 exports['raw'] = Buffer.from('55', 'hex')
 
-// bases encodings
-exports['base1'] = Buffer.from('01', 'hex')
-exports['base2'] = Buffer.from('00', 'hex')
-exports['base8'] = Buffer.from('07', 'hex')
-exports['base10'] = Buffer.from('09', 'hex')
-
-// Serialization formats
+// serialization formats
 exports['cbor'] = Buffer.from('51', 'hex')
 exports['protobuf'] = Buffer.from('50', 'hex')
 exports['rlp'] = Buffer.from('60', 'hex')
 exports['bencode'] = Buffer.from('63', 'hex')
 
-// Multiformats
+// multiformats
 exports['multicodec'] = Buffer.from('30', 'hex')
 exports['multihash'] = Buffer.from('31', 'hex')
 exports['multiaddr'] = Buffer.from('32', 'hex')
 exports['multibase'] = Buffer.from('33', 'hex')
-exports['md4'] = Buffer.from('d4', 'hex')
-exports['md5'] = Buffer.from('d5', 'hex')
 
 // multihashes
+exports['identity'] = Buffer.from('00', 'hex')
+exports['md4'] = Buffer.from('d4', 'hex')
+exports['md5'] = Buffer.from('d5', 'hex')
 exports['sha1'] = Buffer.from('11', 'hex')
 exports['sha2-256'] = Buffer.from('12', 'hex')
 exports['sha2-512'] = Buffer.from('13', 'hex')
@@ -376,18 +370,25 @@ exports['dccp'] = Buffer.from('21', 'hex')
 exports['sctp'] = Buffer.from('84', 'hex')
 exports['udt'] = Buffer.from('012d', 'hex')
 exports['utp'] = Buffer.from('012e', 'hex')
+exports['p2p'] = Buffer.from('01a5', 'hex')
 exports['ipfs'] = Buffer.from('01a5', 'hex')
 exports['http'] = Buffer.from('01e0', 'hex')
 exports['https'] = Buffer.from('01bb', 'hex')
 exports['quic'] = Buffer.from('01cc', 'hex')
 exports['ws'] = Buffer.from('01dd', 'hex')
+exports['wss'] = Buffer.from('01de', 'hex')
 exports['onion'] = Buffer.from('01bc', 'hex')
 exports['onion3'] = Buffer.from('01bd', 'hex')
 exports['garlic64'] = Buffer.from('01be', 'hex')
 exports['p2p-circuit'] = Buffer.from('0122', 'hex')
+exports['dns'] = Buffer.from('35', 'hex')
 exports['dns4'] = Buffer.from('36', 'hex')
 exports['dns6'] = Buffer.from('37', 'hex')
 exports['dnsaddr'] = Buffer.from('38', 'hex')
+exports['p2p-websocket-star'] = Buffer.from('01df', 'hex')
+exports['p2p-webrtc-star'] = Buffer.from('0113', 'hex')
+exports['p2p-webrtc-direct'] = Buffer.from('0114', 'hex')
+exports['unix'] = Buffer.from('0190', 'hex')
 
 // archiving formats
 
@@ -395,13 +396,11 @@ exports['dnsaddr'] = Buffer.from('38', 'hex')
 
 // video formats
 
-// VCS formats
-exports['git-raw'] = Buffer.from('78', 'hex')
-
 // IPLD formats
 exports['dag-pb'] = Buffer.from('70', 'hex')
 exports['dag-cbor'] = Buffer.from('71', 'hex')
 exports['dag-json'] = Buffer.from('0129', 'hex')
+exports['git-raw'] = Buffer.from('78', 'hex')
 exports['eth-block'] = Buffer.from('90', 'hex')
 exports['eth-block-list'] = Buffer.from('91', 'hex')
 exports['eth-tx-trie'] = Buffer.from('92', 'hex')
@@ -411,7 +410,6 @@ exports['eth-tx-receipt'] = Buffer.from('95', 'hex')
 exports['eth-state-trie'] = Buffer.from('96', 'hex')
 exports['eth-account-snapshot'] = Buffer.from('97', 'hex')
 exports['eth-storage-trie'] = Buffer.from('98', 'hex')
-
 exports['bitcoin-block'] = Buffer.from('b0', 'hex')
 exports['bitcoin-tx'] = Buffer.from('b1', 'hex')
 exports['zcash-block'] = Buffer.from('c0', 'hex')
@@ -422,7 +420,6 @@ exports['decred-block'] = Buffer.from('e0', 'hex')
 exports['decred-tx'] = Buffer.from('e1', 'hex')
 exports['dash-block'] = Buffer.from('f0', 'hex')
 exports['dash-tx'] = Buffer.from('f1', 'hex')
-
 exports['torrent-info'] = Buffer.from('7b', 'hex')
 exports['torrent-file'] = Buffer.from('7c', 'hex')
 exports['ed25519-pub'] = Buffer.from('ed', 'hex')

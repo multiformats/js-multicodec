@@ -51,16 +51,11 @@ https://multiformats.github.io/js-multicodec/
 
 ## Updating the lookup table
 
-Updating the lookup table is a manual process. The source of truth is the
-[multicodec default table](https://github.com/multiformats/multicodec/blob/master/table.csv). To make the process easier, there’s an [AWK script in the tools directory](tools/update-table.awk) that does a basic conversion of the default table. The result can’t be used as-is, but serves as a template for manual diffing. The workflow is:
+Updating the lookup table is done with a script. The source of truth is the
+[multicodec default table](https://github.com/multiformats/multicodec/blob/master/table.csv).
+Update the table with running:
 
- - Create a basic draft version
-
-    `curl -X GET https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv|awk -f tools/update-table.awk > /tmp/draft.js`
-
- - Diff it with your tool of choice (e.g. [Meld](http://meldmerge.org/)) and apply the changes
-
-     `meld /tmp/draft.js base-table.js`
+    curl -X GET https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv|./tools/update-table.py
 
 ## Contribute
 
