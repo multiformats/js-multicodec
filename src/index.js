@@ -77,3 +77,10 @@ exports.getCodeVarint = (codecName) => {
   }
   return code
 }
+
+// Make the constants top-level constants
+const constants = require('./constants')
+Object.assign(exports, constants)
+
+// Human friendly names for printing, e.g. in error messages
+exports.print = require('./print')
