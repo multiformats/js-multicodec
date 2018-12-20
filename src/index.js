@@ -77,14 +77,3 @@ exports.getCodeVarint = (codecName) => {
   }
   return code
 }
-
-/**
- * Add a new codec
- * @param {string} name Name of the codec
- * @param {Buffer} code The code of the codec
- * @returns {void}
- */
-exports.addCodec = (name, code) => {
-  codecNameToCodeVarint[name] = util.varintBufferEncode(code)
-  codeToCodecName[code.toString('hex')] = name
-}
