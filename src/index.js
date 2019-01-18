@@ -66,6 +66,15 @@ exports.getCodec = (prefixedData) => {
 }
 
 /**
+ * Get the code of the prefixed data.
+ * @param {Buffer} prefixedData
+ * @returns {number}
+ */
+exports.getCode = (prefixedData) => {
+  return varint.decode(prefixedData)
+}
+
+/**
  * Get the code as varint of a codec name.
  * @param {string} codecName
  * @returns {Buffer}
@@ -76,6 +85,15 @@ exports.getCodeVarint = (codecName) => {
     throw new Error('Codec `' + codecName + '` not found')
   }
   return code
+}
+
+/**
+ * Get the varint of a code.
+ * @param {Number} code
+ * @returns {Array.<number>}
+ */
+exports.getVarint = (code) => {
+  return varint.encode(code)
 }
 
 // Make the constants top-level constants
