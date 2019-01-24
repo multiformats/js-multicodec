@@ -386,15 +386,10 @@ exports['dns4'] = Buffer.from('36', 'hex')
 exports['dns6'] = Buffer.from('37', 'hex')
 exports['dnsaddr'] = Buffer.from('38', 'hex')
 exports['p2p-websocket-star'] = Buffer.from('01df', 'hex')
+exports['p2p-stardust'] = Buffer.from('0115', 'hex')
 exports['p2p-webrtc-star'] = Buffer.from('0113', 'hex')
 exports['p2p-webrtc-direct'] = Buffer.from('0114', 'hex')
 exports['unix'] = Buffer.from('0190', 'hex')
-
-// archiving formats
-
-// image formats
-
-// video formats
 
 // IPLD formats
 exports['dag-pb'] = Buffer.from('70', 'hex')
@@ -420,6 +415,14 @@ exports['decred-block'] = Buffer.from('e0', 'hex')
 exports['decred-tx'] = Buffer.from('e1', 'hex')
 exports['dash-block'] = Buffer.from('f0', 'hex')
 exports['dash-tx'] = Buffer.from('f1', 'hex')
+exports['leofcoin-block'] = Buffer.from('81', 'hex')
+exports['leofcoin-tx'] = Buffer.from('82', 'hex')
+exports['leofcoin-pr'] = Buffer.from('83', 'hex')
 exports['torrent-info'] = Buffer.from('7b', 'hex')
 exports['torrent-file'] = Buffer.from('7c', 'hex')
 exports['ed25519-pub'] = Buffer.from('ed', 'hex')
+
+// Content Namespaces
+exports['ipld-ns'] = Buffer.from('e2', 'hex')
+exports['ipfs-ns'] = Buffer.from('e3', 'hex')
+exports['swarm-ns'] = Buffer.from('e4', 'hex')

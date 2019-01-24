@@ -387,15 +387,10 @@ module.exports = Object.freeze({
   DNS6: 0x37,
   DNSADDR: 0x38,
   P2P_WEBSOCKET_STAR: 0x01df,
+  P2P_STARDUST: 0x0115,
   P2P_WEBRTC_STAR: 0x0113,
   P2P_WEBRTC_DIRECT: 0x0114,
   UNIX: 0x0190,
-
-  // archiving formats,
-
-  // image formats,
-
-  // video formats,
 
   // IPLD formats,
   DAG_PB: 0x70,
@@ -421,7 +416,15 @@ module.exports = Object.freeze({
   DECRED_TX: 0xe1,
   DASH_BLOCK: 0xf0,
   DASH_TX: 0xf1,
+  LEOFCOIN_BLOCK: 0x81,
+  LEOFCOIN_TX: 0x82,
+  LEOFCOIN_PR: 0x83,
   TORRENT_INFO: 0x7b,
   TORRENT_FILE: 0x7c,
-  ED25519_PUB: 0xed
+  ED25519_PUB: 0xed,
+
+  // Content Namespaces,
+  IPLD_NS: 0xe2,
+  IPFS_NS: 0xe3,
+  SWARM_NS: 0xe4
 })

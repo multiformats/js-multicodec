@@ -386,15 +386,10 @@ module.exports = Object.freeze({
   0x37: 'dns6',
   0x38: 'dnsaddr',
   0x01df: 'p2p-websocket-star',
+  0x0115: 'p2p-stardust',
   0x0113: 'p2p-webrtc-star',
   0x0114: 'p2p-webrtc-direct',
   0x0190: 'unix',
-
-  // archiving formats,
-
-  // image formats,
-
-  // video formats,
 
   // IPLD formats,
   0x70: 'dag-pb',
@@ -420,7 +415,15 @@ module.exports = Object.freeze({
   0xe1: 'decred-tx',
   0xf0: 'dash-block',
   0xf1: 'dash-tx',
+  0x81: 'leofcoin-block',
+  0x82: 'leofcoin-tx',
+  0x83: 'leofcoin-pr',
   0x7b: 'torrent-info',
   0x7c: 'torrent-file',
-  0xed: 'ed25519-pub'
+  0xed: 'ed25519-pub',
+
+  // Content Namespaces,
+  0xe2: 'ipld-ns',
+  0xe3: 'ipfs-ns',
+  0xe4: 'swarm-ns'
 })
