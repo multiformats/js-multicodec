@@ -34,6 +34,18 @@ describe('multicodec', () => {
     expect(code).to.eql(Buffer.from('1b', 'hex'))
   })
 
+  it('returns code from prefixed data', () => {
+    const buf = Buffer.from('hey')
+    const prefixedBuf = multicodec.addPrefix('dag-cbor', buf)
+    const code = multicodec.getCode(prefixedBuf)
+    expect(code).to.eql(multicodec.DAG_CBOR)
+  })
+
+  it('returns varint from code', () => {
+    const code = multicodec.getVarint(multicodec.KECCAK_256)
+    expect(code).to.eql([0x1b])
+  })
+
   it('throws error on unknown codec name when getting the code', () => {
     expect(() => {
       multicodec.getCodeVarint('this-codec-doesnt-exist')

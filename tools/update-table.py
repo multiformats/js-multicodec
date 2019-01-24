@@ -26,6 +26,21 @@ def padded_hex(hexstring):
         prefix = '0x'
     return prefix + hexbytes
 
+def unique_code(codecs):
+    """Returns a list where every code exists only one.
+
+    The first item in the list is taken
+    """
+    seen = []
+    unique = []
+    for codec in codecs:
+        if 'code' in codec:
+            if codec['code'] in seen:
+                continue
+            else:
+                seen.append(codec['code'])
+        unique.append(codec)
+    return unique
 
 parsed = []
 multicodec_reader = csv.DictReader(sys.stdin, skipinitialspace=True)
@@ -60,3 +75,30 @@ with open(print_file, 'w') as ff:
             hexstring = codec['code'][2:]
             ff.write("exports['{}'] = Buffer.from('{}', 'hex')\n"
                      .format(codec['human'], hexstring))
+
+constants_file = os.path.join(output_dir, 'constants.js')
+with open(constants_file, 'w') as ff:
+    ff.write(HEADER)
+    ff.write('module.exports = Object.freeze({\n')
+    for index, codec in enumerate(parsed):
+        if index:
+            ff.write(',\n')
+        if 'headline' in codec:
+            ff.write("\n  // {headline}".format(**codec))
+        else:
+            ff.write("  {const}: {code}".format(**codec))
+    ff.write('\n})\n')
+
+print_file = os.path.join(output_dir, 'print.js')
+with open(print_file, 'w') as ff:
+    ff.write(HEADER)
+    ff.write('module.exports = Object.freeze({\n')
+    unique = unique_code(parsed)
+    for index, codec in enumerate(unique):
+        if index:
+            ff.write(',\n')
+        if 'headline' in codec:
+            ff.write("\n  // {headline}".format(**codec))
+        else:
+            ff.write("  {code}: '{human}'".format(**codec))
+    ff.write('\n})\n')
