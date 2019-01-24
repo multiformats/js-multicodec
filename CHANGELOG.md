@@ -1,3 +1,15 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/multiformats/js-multicodec/compare/v0.4.0...v0.5.0) (2019-01-24)
+
+
+### Features
+
+* add codes as constants ([1c43120](https://github.com/multiformats/js-multicodec/commit/1c43120))
+* add convenience function for getting the codec code ([ab110e3](https://github.com/multiformats/js-multicodec/commit/ab110e3))
+* update scripts ([b74f269](https://github.com/multiformats/js-multicodec/commit/b74f269))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/multiformats/js-multicodec/compare/v0.3.0...v0.4.0) (2019-01-08)
 
