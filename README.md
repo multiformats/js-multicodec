@@ -31,7 +31,7 @@
 const multicodec = require('multicodec')
 ```
 
-## UsageW
+## Usage
 
 ### Example
 
