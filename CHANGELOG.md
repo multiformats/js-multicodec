@@ -1,3 +1,13 @@
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/multiformats/js-multicodec/compare/v0.5.0...v0.5.1) (2019-04-19)
+
+
+### Bug Fixes
+
+* update the multicodec table ([2e5367f](https://github.com/multiformats/js-multicodec/commit/2e5367f)), closes [#40](https://github.com/multiformats/js-multicodec/issues/40)
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/multiformats/js-multicodec/compare/v0.4.0...v0.5.0) (2019-01-24)
 
