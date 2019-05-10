@@ -46,6 +46,16 @@ describe('multicodec', () => {
     expect(code).to.eql([0x1b])
   })
 
+  it('returns the codec name from code', () => {
+    expect(multicodec.getName(144)).to.eql('eth-block')
+    expect(multicodec.getName(112)).to.eql('dag-pb')
+  })
+
+  it('returns the codec number from name', () => {
+    expect(multicodec.getNumber('eth-block')).to.eql(144)
+    expect(multicodec.getNumber('dag-pb')).to.eql(112)
+  })
+
   it('throws error on unknown codec name when getting the code', () => {
     expect(() => {
       multicodec.getCodeVarint('this-codec-doesnt-exist')
