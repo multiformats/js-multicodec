@@ -66,6 +66,28 @@ exports.getCodec = (prefixedData) => {
 }
 
 /**
+ * Get the name of the codec.
+ * @param {number} codec
+ * @returns {string}
+ */
+exports.getName = (codec) => {
+  return codeToCodecName[codec.toString(16)]
+}
+
+/**
+ * Get the code of the codec
+ * @param {string} name
+ * @returns {number}
+ */
+exports.getNumber = (name) => {
+  const code = codecNameToCodeVarint[name]
+  if (code === undefined) {
+    throw new Error('Codec `' + name + '` not found')
+  }
+  return util.varintBufferDecode(code)[0]
+}
+
+/**
  * Get the code of the prefixed data.
  * @param {Buffer} prefixedData
  * @returns {number}
