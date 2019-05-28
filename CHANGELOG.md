@@ -1,3 +1,8 @@
+<a name="0.5.3"></a>
+## [0.5.3](https://github.com/multiformats/js-multicodec/compare/v0.5.2...v0.5.3) (2019-05-28)
+
+
+
 <a name="0.5.2"></a>
 ## [0.5.2](https://github.com/multiformats/js-multicodec/compare/v0.5.1...v0.5.2) (2019-05-28)
 
