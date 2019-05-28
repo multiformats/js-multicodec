@@ -1,3 +1,14 @@
+<a name="0.5.2"></a>
+## [0.5.2](https://github.com/multiformats/js-multicodec/compare/v0.5.1...v0.5.2) (2019-05-28)
+
+
+### Features
+
+* add libp2p-key ([db71d5c](https://github.com/multiformats/js-multicodec/commit/db71d5c))
+* add method to convert codec names to numbers and back ([a18bce9](https://github.com/multiformats/js-multicodec/commit/a18bce9))
+
+
+
 <a name="0.5.1"></a>
 ## [0.5.1](https://github.com/multiformats/js-multicodec/compare/v0.5.0...v0.5.1) (2019-04-19)
 
