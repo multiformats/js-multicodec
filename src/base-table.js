@@ -429,6 +429,7 @@ exports['path'] = Buffer.from('2f', 'hex')
 exports['ipld-ns'] = Buffer.from('e2', 'hex')
 exports['ipfs-ns'] = Buffer.from('e3', 'hex')
 exports['swarm-ns'] = Buffer.from('e4', 'hex')
+exports['ipns-ns'] = Buffer.from('e5', 'hex')
 
 // key
 exports['ed25519-pub'] = Buffer.from('ed', 'hex')
