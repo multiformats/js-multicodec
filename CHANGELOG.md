@@ -1,3 +1,13 @@
+<a name="0.5.4"></a>
+## [0.5.4](https://github.com/multiformats/js-multicodec/compare/v0.5.3...v0.5.4) (2019-07-16)
+
+
+### Features
+
+* add ipns-ns ([#46](https://github.com/multiformats/js-multicodec/issues/46)) ([efc5aa6](https://github.com/multiformats/js-multicodec/commit/efc5aa6))
+
+
+
 <a name="0.5.3"></a>
 ## [0.5.3](https://github.com/multiformats/js-multicodec/compare/v0.5.2...v0.5.3) (2019-05-28)
 
