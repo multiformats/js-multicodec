@@ -430,6 +430,7 @@ module.exports = Object.freeze({
   IPLD_NS: 0xe2,
   IPFS_NS: 0xe3,
   SWARM_NS: 0xe4,
+  IPNS_NS: 0xe5,
 
   // key
   ED25519_PUB: 0xed,
