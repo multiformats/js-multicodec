@@ -389,6 +389,7 @@ exports['ws'] = Buffer.from('01dd', 'hex')
 exports['wss'] = Buffer.from('01de', 'hex')
 exports['p2p-websocket-star'] = Buffer.from('01df', 'hex')
 exports['http'] = Buffer.from('01e0', 'hex')
+exports['zeronet'] = Buffer.from('1000', 'hex')
 
 // ipld
 exports['raw'] = Buffer.from('55', 'hex')

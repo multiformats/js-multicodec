@@ -390,6 +390,7 @@ module.exports = Object.freeze({
   WSS: 0x01de,
   P2P_WEBSOCKET_STAR: 0x01df,
   HTTP: 0x01e0,
+  ZERONET: 0x1000,
 
   // ipld
   RAW: 0x55,
