@@ -8,6 +8,8 @@ exports['protobuf'] = Buffer.from('50', 'hex')
 exports['cbor'] = Buffer.from('51', 'hex')
 exports['rlp'] = Buffer.from('60', 'hex')
 exports['bencode'] = Buffer.from('63', 'hex')
+exports['json'] = Buffer.from('0200', 'hex')
+exports['messagepack'] = Buffer.from('0201', 'hex')
 
 // multiformat
 exports['multicodec'] = Buffer.from('30', 'hex')
@@ -389,7 +391,6 @@ exports['ws'] = Buffer.from('01dd', 'hex')
 exports['wss'] = Buffer.from('01de', 'hex')
 exports['p2p-websocket-star'] = Buffer.from('01df', 'hex')
 exports['http'] = Buffer.from('01e0', 'hex')
-exports['zeronet'] = Buffer.from('1000', 'hex')
 
 // ipld
 exports['raw'] = Buffer.from('55', 'hex')
@@ -431,6 +432,7 @@ exports['ipld-ns'] = Buffer.from('e2', 'hex')
 exports['ipfs-ns'] = Buffer.from('e3', 'hex')
 exports['swarm-ns'] = Buffer.from('e4', 'hex')
 exports['ipns-ns'] = Buffer.from('e5', 'hex')
+exports['zeronet'] = Buffer.from('e6', 'hex')
 
 // key
 exports['ed25519-pub'] = Buffer.from('ed', 'hex')
