@@ -9,6 +9,8 @@ module.exports = Object.freeze({
   0x51: 'cbor',
   0x60: 'rlp',
   0x63: 'bencode',
+  0x0200: 'json',
+  0x0201: 'messagepack',
 
   // multiformat
   0x30: 'multicodec',
@@ -430,6 +432,7 @@ module.exports = Object.freeze({
   0xe3: 'ipfs-ns',
   0xe4: 'swarm-ns',
   0xe5: 'ipns-ns',
+  0xe6: 'zeronet',
 
   // key
   0xed: 'ed25519-pub',
