@@ -6,7 +6,7 @@ const baseTable = require('./base-table')
 const nameTable = {}
 module.exports = nameTable
 
-for (let encodingName in baseTable) {
-  let code = baseTable[encodingName]
+for (const encodingName in baseTable) {
+  const code = baseTable[encodingName]
   nameTable[code.toString('hex')] = encodingName
 }

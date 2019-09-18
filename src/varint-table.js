@@ -7,7 +7,7 @@ const varintBufferEncode = require('./util').varintBufferEncode
 const varintTable = {}
 module.exports = varintTable
 
-for (let encodingName in baseTable) {
-  let code = baseTable[encodingName]
+for (const encodingName in baseTable) {
+  const code = baseTable[encodingName]
   varintTable[encodingName] = varintBufferEncode(code)
 }

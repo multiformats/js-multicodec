@@ -43,7 +43,7 @@
     "varint": "^5.0.0"
   },
   "devDependencies": {
-    "aegir": "^18.2.2",
+    "aegir": "^20.2.0",
     "bent": "^7.0.1",
     "chai": "^4.2.0",
     "dirty-chai": "^2.0.1",

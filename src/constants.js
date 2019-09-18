@@ -5,7 +5,7 @@
 const table = require('./base-table')
 const constants = {}
 
-for (let [k,v] of Object.entries(table)) {
+for (const [k, v] of Object.entries(table)) {
   constants[k.toUpperCase().replace(/-/g, '_')] = parseInt(v.toString('hex'), 16)
 }
 
