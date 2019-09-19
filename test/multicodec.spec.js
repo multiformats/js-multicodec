@@ -78,6 +78,11 @@ describe('multicodec', () => {
     expect(multicodec.print[multicodec.BLAKE2B_8]).to.eql('blake2b-8')
   })
 
+  it('returns p2p when 0x01a5 is used', () => {
+    // `ipfs` and `p2p` are assigned to `0x01a5`, `ipfs` is deprecated
+    expect(multicodec.print[0x01a5]).to.eql('p2p')
+  })
+
   it('throws error on unknown codec name when getting the code', () => {
     expect(() => {
       multicodec.getCodeVarint('this-codec-doesnt-exist')
