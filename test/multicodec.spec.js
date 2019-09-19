@@ -49,11 +49,33 @@ describe('multicodec', () => {
   it('returns the codec name from code', () => {
     expect(multicodec.getName(144)).to.eql('eth-block')
     expect(multicodec.getName(112)).to.eql('dag-pb')
+    expect(multicodec.getName(0xb201)).to.eql('blake2b-8')
   })
 
   it('returns the codec number from name', () => {
     expect(multicodec.getNumber('eth-block')).to.eql(144)
     expect(multicodec.getNumber('dag-pb')).to.eql(112)
+    // NOTE vmx 2019-09019: Uncomment once
+    // https://github.com/multiformats/js-multicodec/issues/50 is fixed
+    // expect(multicodec.getNumber('blake2b-8')).to.eql(0xb201)
+  })
+
+  it('returns the codec number from constant', () => {
+    expect(multicodec.ETH_BLOCK).to.eql(144)
+    expect(multicodec.DAG_PB).to.eql(112)
+    expect(multicodec.BLAKE2B_8).to.eql(0xb201)
+  })
+
+  it('returns the name from codec number', () => {
+    expect(multicodec.print[144]).to.eql('eth-block')
+    expect(multicodec.print[112]).to.eql('dag-pb')
+    expect(multicodec.print[0x0111]).to.eql('udp')
+    expect(multicodec.print[0xb201]).to.eql('blake2b-8')
+
+    expect(multicodec.print[multicodec.ETH_BLOCK]).to.eql('eth-block')
+    expect(multicodec.print[multicodec.DAG_PB]).to.eql('dag-pb')
+    expect(multicodec.print[multicodec.UDP]).to.eql('udp')
+    expect(multicodec.print[multicodec.BLAKE2B_8]).to.eql('blake2b-8')
   })
 
   it('throws error on unknown codec name when getting the code', () => {
