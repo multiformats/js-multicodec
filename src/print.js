@@ -1,7 +1,5 @@
-// THIS FILE IS GENERATED, DO NO EDIT MANUALLY
-// For more information see the README.md
-/* eslint-disable dot-notation */
 'use strict'
+
 const table = require('./base-table')
 const e = {}
 
