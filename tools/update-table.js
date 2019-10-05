@@ -10,7 +10,7 @@ const table = {
 `
 const FOOTER = `
 }
-for (let [k,v] of Object.entries(table)) {
+for (const [k, v] of Object.entries(table)) {
   table[k] = numberToBuffer(v)
 }
 module.exports = Object.freeze(table)
@@ -36,10 +36,10 @@ const run = async () => {
   let first = true
   for await (let entry of parse()) {
     key = entry.name
-    if (key.includes('-')) key = `"${key}"`
+    if (key.includes('-')) key = `'${key}'`
     console.log(entry)
     if (!first) str += ',\n  '
-    else str += ' ' 
+    else str += '  ' 
     str += `${key}: ${entry.code}`
     first = false
   }
