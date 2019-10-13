@@ -5,7 +5,8 @@ module.exports = {
   numberToBuffer,
   bufferToNumber,
   varintBufferEncode,
-  varintBufferDecode
+  varintBufferDecode,
+  varintEncode
 }
 
 function bufferToNumber (buf) {
@@ -26,4 +27,8 @@ function varintBufferEncode (input) {
 
 function varintBufferDecode (input) {
   return numberToBuffer(varint.decode(input))
+}
+
+function varintEncode (num) {
+  return Buffer.from(varint.encode(num))
 }
