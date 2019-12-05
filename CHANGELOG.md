@@ -1,3 +1,13 @@
+<a name="0.5.6"></a>
+## [0.5.6](https://github.com/multiformats/js-multicodec/compare/v0.5.5...v0.5.6) (2019-12-05)
+
+
+### Features
+
+* reduce bundle size by 1/3 ([#49](https://github.com/multiformats/js-multicodec/issues/49)) ([2422b09](https://github.com/multiformats/js-multicodec/commit/2422b09))
+
+
+
 <a name="0.5.4"></a>
 ## [0.5.4](https://github.com/multiformats/js-multicodec/compare/v0.5.3...v0.5.4) (2019-07-16)
 
