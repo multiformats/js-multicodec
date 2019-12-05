@@ -1,12 +1,12 @@
 'use strict'
-const baseTable = require('./base-table')
+const baseTable = require('./base-table.json')
 
-// this creates a map for code as hexString -> codecName
-
+// map for hexString -> codecName
 const nameTable = {}
-module.exports = nameTable
 
-for (let encodingName in baseTable) {
-  let code = baseTable[encodingName]
-  nameTable[code.toString('hex')] = encodingName
+for (const encodingName in baseTable) {
+  const code = baseTable[encodingName]
+  nameTable[code.toString(16)] = encodingName
 }
+
+module.exports = Object.freeze(nameTable)
