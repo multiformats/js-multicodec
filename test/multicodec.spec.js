@@ -99,7 +99,7 @@ describe('multicodec', () => {
     expect(() => {
       multicodec.getCodec(prefixedBuf)
     }).to.throw(
-      'Code `0xffee` not found'
+      'Code 65518 not found'
     )
   })
 })
