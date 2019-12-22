@@ -1,3 +1,14 @@
+<a name="0.5.7"></a>
+## [0.5.7](https://github.com/multiformats/js-multicodec/compare/v0.5.6...v0.5.7) (2019-12-22)
+
+
+### Bug Fixes
+
+* name table not hex encoded ([88bf273](https://github.com/multiformats/js-multicodec/commit/88bf273))
+* remove unused table file ([f3766e5](https://github.com/multiformats/js-multicodec/commit/f3766e5))
+
+
+
 <a name="0.5.6"></a>
 ## [0.5.6](https://github.com/multiformats/js-multicodec/compare/v0.5.5...v0.5.6) (2019-12-05)
 
