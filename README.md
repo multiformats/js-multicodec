@@ -27,9 +27,11 @@
 > npm install multicodec
 ```
 
-```JavaScript
-const multicodec = require('multicodec')
-```
+The type definitions for this package are available on http://definitelytyped.org/. To install just use:
+
+ ```sh
+ $ npm install -D @types/multicodec
+ ```
 
 ## Usage
 
