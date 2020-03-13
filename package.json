@@ -40,10 +40,11 @@
   },
   "homepage": "https://github.com/multiformats/js-multicodec#readme",
   "dependencies": {
+    "buffer": "^5.5.0",
     "varint": "^5.0.0"
   },
   "devDependencies": {
-    "aegir": "^20.5.0",
+    "aegir": "^21.3.0",
     "bent": "^7.0.4",
     "chai": "^4.2.0",
     "dirty-chai": "^2.0.1",
