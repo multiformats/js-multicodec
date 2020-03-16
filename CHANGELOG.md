@@ -1,3 +1,18 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/multiformats/js-multicodec/compare/v1.0.0...v1.0.1) (2020-03-16)
+
+
+### Bug Fixes
+
+* add buffer ([156e29d](https://github.com/multiformats/js-multicodec/commit/156e29d))
+
+
+### Features
+
+* adds blurb about types on definitelytyped ([8815d4b](https://github.com/multiformats/js-multicodec/commit/8815d4b))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/multiformats/js-multicodec/compare/v0.5.7...v1.0.0) (2019-12-23)
 
