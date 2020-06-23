@@ -45,6 +45,8 @@
   "leofcoin-tx": 130,
   "leofcoin-pr": 131,
   "sctp": 132,
+  "dag-jose": 133,
+  "dag-cose": 134,
   "eth-block": 144,
   "eth-block-list": 145,
   "eth-tx-trie": 146,
