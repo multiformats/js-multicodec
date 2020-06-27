@@ -1,3 +1,13 @@
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/multiformats/js-multicodec/compare/v1.0.2...v1.0.3) (2020-06-27)
+
+
+### Features
+
+* add dag-jose, and -cose to table ([230d8d3](https://github.com/multiformats/js-multicodec/commit/230d8d3))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/multiformats/js-multicodec/compare/v1.0.1...v1.0.2) (2020-06-16)
 
