@@ -1,3 +1,14 @@
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/multiformats/js-multicodec/compare/v1.0.3...v1.0.4) (2020-07-21)
+
+
+### Features
+
+* `npm run update-table` script ([a3811fb](https://github.com/multiformats/js-multicodec/commit/a3811fb))
+* update table with lots of new entries ([1744eb6](https://github.com/multiformats/js-multicodec/commit/1744eb6))
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/multiformats/js-multicodec/compare/v1.0.2...v1.0.3) (2020-06-27)
 
