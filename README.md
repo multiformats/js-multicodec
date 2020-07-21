@@ -65,7 +65,7 @@ Updating the lookup table is done with a script. The source of truth is the
 [multicodec default table](https://github.com/multiformats/multicodec/blob/master/table.csv).
 Update the table with running:
 
-    node ./tools/update-table.js
+    npm run update-table
 
 ## Contribute
 
