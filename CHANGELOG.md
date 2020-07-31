@@ -1,3 +1,18 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/multiformats/js-multicodec/compare/v1.0.4...v2.0.0) (2020-07-31)
+
+
+### Bug Fixes
+
+* replace node buffers with uint8arrays ([688a071](https://github.com/multiformats/js-multicodec/commit/688a071))
+
+
+### BREAKING CHANGES
+
+* - Where node `Buffer`s were returned, they are now `Uint8Array`s
+
+
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://github.com/multiformats/js-multicodec/compare/v1.0.3...v1.0.4) (2020-07-21)
 
