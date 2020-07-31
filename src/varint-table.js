@@ -3,7 +3,7 @@
 const baseTable = require('./base-table.json')
 const varintEncode = require('./util').varintEncode
 
-// map for codecName -> codeVarintBuffer
+// map for codecName -> codeVarintUint8Array
 const varintTable = {}
 
 for (const encodingName in baseTable) {

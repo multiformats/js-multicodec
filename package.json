@@ -41,14 +41,12 @@
   },
   "homepage": "https://github.com/multiformats/js-multicodec#readme",
   "dependencies": {
-    "buffer": "^5.6.0",
+    "uint8arrays": "0.0.2",
     "varint": "^5.0.0"
   },
   "devDependencies": {
     "aegir": "^23.0.0",
     "bent": "^7.3.4",
-    "chai": "^4.2.0",
-    "dirty-chai": "^2.0.1",
     "pre-push": "~0.1.1"
   },
   "contributors": [

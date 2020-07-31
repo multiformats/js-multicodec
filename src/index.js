@@ -11,11 +11,11 @@
  */
 'use strict'
 
-const { Buffer } = require('buffer')
 const varint = require('varint')
 const intTable = require('./int-table')
 const codecNameToCodeVarint = require('./varint-table')
 const util = require('./util')
+const uint8ArrayConcat = require('uint8arrays/concat')
 
 exports = module.exports
 
@@ -23,14 +23,14 @@ exports = module.exports
  * Prefix a buffer with a multicodec-packed.
  *
  * @param {string|number} multicodecStrOrCode
- * @param {Buffer} data
- * @returns {Buffer}
+ * @param {Uint8Array} data
+ * @returns {Uint8Array}
  */
 exports.addPrefix = (multicodecStrOrCode, data) => {
   let prefix
 
-  if (Buffer.isBuffer(multicodecStrOrCode)) {
-    prefix = util.varintBufferEncode(multicodecStrOrCode)
+  if (multicodecStrOrCode instanceof Uint8Array) {
+    prefix = util.varintUint8ArrayEncode(multicodecStrOrCode)
   } else {
     if (codecNameToCodeVarint[multicodecStrOrCode]) {
       prefix = codecNameToCodeVarint[multicodecStrOrCode]
@@ -38,14 +38,14 @@ exports.addPrefix = (multicodecStrOrCode, data) => {
       throw new Error('multicodec not recognized')
     }
   }
-  return Buffer.concat([prefix, data])
+  return uint8ArrayConcat([prefix, data], prefix.length + data.length)
 }
 
 /**
  * Decapsulate the multicodec-packed prefix from the data.
  *
- * @param {Buffer} data
- * @returns {Buffer}
+ * @param {Uint8Array} data
+ * @returns {Uint8Array}
  */
 exports.rmPrefix = (data) => {
   varint.decode(data)
@@ -54,7 +54,7 @@ exports.rmPrefix = (data) => {
 
 /**
  * Get the codec of the prefixed data.
- * @param {Buffer} prefixedData
+ * @param {Uint8Array} prefixedData
  * @returns {string}
  */
 exports.getCodec = (prefixedData) => {
@@ -85,12 +85,12 @@ exports.getNumber = (name) => {
   if (code === undefined) {
     throw new Error('Codec `' + name + '` not found')
   }
-  return util.varintBufferDecode(code)[0]
+  return util.varintUint8ArrayDecode(code)[0]
 }
 
 /**
  * Get the code of the prefixed data.
- * @param {Buffer} prefixedData
+ * @param {Uint8Array} prefixedData
  * @returns {number}
  */
 exports.getCode = (prefixedData) => {
@@ -100,7 +100,7 @@ exports.getCode = (prefixedData) => {
 /**
  * Get the code as varint of a codec name.
  * @param {string} codecName
- * @returns {Buffer}
+ * @returns {Uint8Array}
  */
 exports.getCodeVarint = (codecName) => {
   const code = codecNameToCodeVarint[codecName]

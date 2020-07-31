@@ -2,7 +2,7 @@
 
 const multicodec = require('multicodec')
 
-const prefixedProtobuf = multicodec.addPrefix('protobuf', Buffer.from('some protobuf code'))
+const prefixedProtobuf = multicodec.addPrefix('protobuf', new TextEncoder().encode('some protobuf code'))
 
 // eslint-disable-next-line no-console
 console.log(prefixedProtobuf)
