@@ -1,35 +1,37 @@
 'use strict'
+
 const varint = require('varint')
-const { Buffer } = require('buffer')
+const uint8ArrayToString = require('uint8arrays/to-string')
+const uint8ArrayFromString = require('uint8arrays/from-string')
 
 module.exports = {
-  numberToBuffer,
-  bufferToNumber,
-  varintBufferEncode,
-  varintBufferDecode,
+  numberToUint8Array,
+  uint8ArrayToNumber,
+  varintUint8ArrayEncode,
+  varintUint8ArrayDecode,
   varintEncode
 }
 
-function bufferToNumber (buf) {
-  return parseInt(buf.toString('hex'), 16)
+function uint8ArrayToNumber (buf) {
+  return parseInt(uint8ArrayToString(buf, 'base16'), 16)
 }
 
-function numberToBuffer (num) {
+function numberToUint8Array (num) {
   let hexString = num.toString(16)
   if (hexString.length % 2 === 1) {
     hexString = '0' + hexString
   }
-  return Buffer.from(hexString, 'hex')
+  return uint8ArrayFromString(hexString, 'base16')
 }
 
-function varintBufferEncode (input) {
-  return Buffer.from(varint.encode(bufferToNumber(input)))
+function varintUint8ArrayEncode (input) {
+  return Uint8Array.from(varint.encode(uint8ArrayToNumber(input)))
 }
 
-function varintBufferDecode (input) {
-  return numberToBuffer(varint.decode(input))
+function varintUint8ArrayDecode (input) {
+  return numberToUint8Array(varint.decode(input))
 }
 
 function varintEncode (num) {
-  return Buffer.from(varint.encode(num))
+  return Uint8Array.from(varint.encode(num))
 }

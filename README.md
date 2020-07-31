@@ -1,4 +1,4 @@
-# js-multicodec
+# js-multicodec <!-- omit in toc -->
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](https://protocol.ai)
 [![](https://img.shields.io/badge/project-multiformats-blue.svg?style=flat-square)](https://github.com/multiformats/multiformats)
@@ -9,14 +9,16 @@
 
 > JavaScript implementation of the multicodec specification
 
-## Lead Maintainer
+## Lead Maintainer <!-- omit in toc -->
 
 [Henrique Dias](http://github.com/hacdias)
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
 - [Install](#install)
 - [Usage](#usage)
+  - [Example](#example)
+  - [API](#api)
 - [Updating the lookup table](#updating-the-lookup-table)
 - [Contribute](#contribute)
 - [License](#license)

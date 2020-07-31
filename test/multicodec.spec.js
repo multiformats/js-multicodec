@@ -1,29 +1,27 @@
 /* eslint-env mocha */
 'use strict'
 
-const chai = require('chai')
-const dirtyChai = require('dirty-chai')
-const expect = chai.expect
-chai.use(dirtyChai)
+const { expect } = require('aegir/utils/chai')
 const multicodec = require('../src')
+const uint8ArrayFromString = require('uint8arrays/from-string')
 
 describe('multicodec', () => {
   it('add prefix through multicodec (string)', () => {
-    const buf = Buffer.from('hey')
+    const buf = uint8ArrayFromString('hey')
     const prefixedBuf = multicodec.addPrefix('protobuf', buf)
     expect(multicodec.getCodec(prefixedBuf)).to.equal('protobuf')
     expect(buf).to.eql(multicodec.rmPrefix(prefixedBuf))
   })
 
   it('add prefix through code (code)', () => {
-    const buf = Buffer.from('hey')
-    const prefixedBuf = multicodec.addPrefix(Buffer.from('70', 'hex'), buf)
+    const buf = uint8ArrayFromString('hey')
+    const prefixedBuf = multicodec.addPrefix(uint8ArrayFromString('70', 'base16'), buf)
     expect(multicodec.getCodec(prefixedBuf)).to.equal('dag-pb')
     expect(buf).to.eql(multicodec.rmPrefix(prefixedBuf))
   })
 
   it('add multibyte varint prefix (eth-block) through multicodec (string)', () => {
-    const buf = Buffer.from('hey')
+    const buf = uint8ArrayFromString('hey')
     const prefixedBuf = multicodec.addPrefix('eth-block', buf)
     expect(multicodec.getCodec(prefixedBuf)).to.equal('eth-block')
     expect(buf).to.eql(multicodec.rmPrefix(prefixedBuf))
@@ -31,11 +29,11 @@ describe('multicodec', () => {
 
   it('returns code via codec name', () => {
     const code = multicodec.getCodeVarint('keccak-256')
-    expect(code).to.eql(Buffer.from('1b', 'hex'))
+    expect(code).to.eql(uint8ArrayFromString('1b', 'base16'))
   })
 
   it('returns code from prefixed data', () => {
-    const buf = Buffer.from('hey')
+    const buf = uint8ArrayFromString('hey')
     const prefixedBuf = multicodec.addPrefix('dag-cbor', buf)
     const code = multicodec.getCode(prefixedBuf)
     expect(code).to.eql(multicodec.DAG_CBOR)
@@ -92,9 +90,9 @@ describe('multicodec', () => {
   })
 
   it('throws error on unknown codec name when getting the codec', () => {
-    const code = Buffer.from('ffee', 'hex')
+    const code = uint8ArrayFromString('ffee', 'base16')
 
-    const buf = Buffer.from('hey')
+    const buf = uint8ArrayFromString('hey')
     const prefixedBuf = multicodec.addPrefix(code, buf)
     expect(() => {
       multicodec.getCodec(prefixedBuf)
