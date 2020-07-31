@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>multicodec 1.0.4 | Documentation</title>
+  <title>multicodec 2.0.0 | Documentation</title>
   <meta name='description' content='JavaScript implementation of the multicodec specification'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>multicodec</h3>
-          <div class='mb1'><code>1.0.4</code></div>
+          <div class='mb1'><code>2.0.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -117,7 +117,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/27c2ec1888abbe78ea573ca6c8289c3454242b51/src/index.js#L12-L12'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/86548cdfe9e3c91ecb892c67ff0f8c126fc2335c/src/index.js#L12-L12'>
       <span>src/index.js</span>
       </a>
     
@@ -176,7 +176,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/27c2ec1888abbe78ea573ca6c8289c3454242b51/src/index.js#L29-L42'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/86548cdfe9e3c91ecb892c67ff0f8c126fc2335c/src/index.js#L29-L42'>
       <span>src/index.js</span>
       </a>
     
@@ -185,7 +185,7 @@
 
   <p>Prefix a buffer with a multicodec-packed.</p>
 
-    <div class='pre p1 fill-light mt0'>addPrefix(multicodecStrOrCode: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>), data: <a href="https://nodejs.org/api/buffer.html">Buffer</a>): <a href="https://nodejs.org/api/buffer.html">Buffer</a></div>
+    <div class='pre p1 fill-light mt0'>addPrefix(multicodecStrOrCode: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>), data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></div>
   
   
 
@@ -210,7 +210,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://nodejs.org/api/buffer.html">Buffer</a>)</code>
+            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a>)</code>
 	    
           </div>
           
@@ -224,7 +224,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></code>:
         
 
       
@@ -263,7 +263,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/27c2ec1888abbe78ea573ca6c8289c3454242b51/src/index.js#L50-L53'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/86548cdfe9e3c91ecb892c67ff0f8c126fc2335c/src/index.js#L50-L53'>
       <span>src/index.js</span>
       </a>
     
@@ -272,7 +272,7 @@
 
   <p>Decapsulate the multicodec-packed prefix from the data.</p>
 
-    <div class='pre p1 fill-light mt0'>rmPrefix(data: <a href="https://nodejs.org/api/buffer.html">Buffer</a>): <a href="https://nodejs.org/api/buffer.html">Buffer</a></div>
+    <div class='pre p1 fill-light mt0'>rmPrefix(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></div>
   
   
 
@@ -289,7 +289,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://nodejs.org/api/buffer.html">Buffer</a>)</code>
+            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a>)</code>
 	    
           </div>
           
@@ -303,7 +303,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></code>:
         
 
       
@@ -342,7 +342,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/27c2ec1888abbe78ea573ca6c8289c3454242b51/src/index.js#L60-L67'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/86548cdfe9e3c91ecb892c67ff0f8c126fc2335c/src/index.js#L60-L67'>
       <span>src/index.js</span>
       </a>
     
@@ -351,7 +351,7 @@
 
   <p>Get the codec of the prefixed data.</p>
 
-    <div class='pre p1 fill-light mt0'>getCodec(prefixedData: <a href="https://nodejs.org/api/buffer.html">Buffer</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+    <div class='pre p1 fill-light mt0'>getCodec(prefixedData: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
   
   
 
@@ -368,7 +368,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>prefixedData</span> <code class='quiet'>(<a href="https://nodejs.org/api/buffer.html">Buffer</a>)</code>
+            <span class='code bold'>prefixedData</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a>)</code>
 	    
           </div>
           
@@ -421,7 +421,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/27c2ec1888abbe78ea573ca6c8289c3454242b51/src/index.js#L74-L76'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/86548cdfe9e3c91ecb892c67ff0f8c126fc2335c/src/index.js#L74-L76'>
       <span>src/index.js</span>
       </a>
     
@@ -500,7 +500,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/27c2ec1888abbe78ea573ca6c8289c3454242b51/src/index.js#L83-L89'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/86548cdfe9e3c91ecb892c67ff0f8c126fc2335c/src/index.js#L83-L89'>
       <span>src/index.js</span>
       </a>
     
@@ -579,7 +579,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/27c2ec1888abbe78ea573ca6c8289c3454242b51/src/index.js#L96-L98'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/86548cdfe9e3c91ecb892c67ff0f8c126fc2335c/src/index.js#L96-L98'>
       <span>src/index.js</span>
       </a>
     
@@ -588,7 +588,7 @@
 
   <p>Get the code of the prefixed data.</p>
 
-    <div class='pre p1 fill-light mt0'>getCode(prefixedData: <a href="https://nodejs.org/api/buffer.html">Buffer</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+    <div class='pre p1 fill-light mt0'>getCode(prefixedData: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -605,7 +605,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>prefixedData</span> <code class='quiet'>(<a href="https://nodejs.org/api/buffer.html">Buffer</a>)</code>
+            <span class='code bold'>prefixedData</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a>)</code>
 	    
           </div>
           
@@ -658,7 +658,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/27c2ec1888abbe78ea573ca6c8289c3454242b51/src/index.js#L105-L111'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/86548cdfe9e3c91ecb892c67ff0f8c126fc2335c/src/index.js#L105-L111'>
       <span>src/index.js</span>
       </a>
     
@@ -667,7 +667,7 @@
 
   <p>Get the code as varint of a codec name.</p>
 
-    <div class='pre p1 fill-light mt0'>getCodeVarint(codecName: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://nodejs.org/api/buffer.html">Buffer</a></div>
+    <div class='pre p1 fill-light mt0'>getCodeVarint(codecName: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></div>
   
   
 
@@ -698,7 +698,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a></code>:
         
 
       
@@ -737,7 +737,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/27c2ec1888abbe78ea573ca6c8289c3454242b51/src/index.js#L118-L120'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/multiformats/js-multicodec/blob/86548cdfe9e3c91ecb892c67ff0f8c126fc2335c/src/index.js#L118-L120'>
       <span>src/index.js</span>
       </a>
     
