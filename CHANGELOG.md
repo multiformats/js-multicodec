@@ -1,3 +1,13 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/multiformats/js-multicodec/compare/v2.0.0...v2.0.1) (2020-09-07)
+
+
+### Bug Fixes
+
+* getNumber varint decode bug  ([ce93ceb](https://github.com/multiformats/js-multicodec/commit/ce93ceb)), closes [#50](https://github.com/multiformats/js-multicodec/issues/50)
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/multiformats/js-multicodec/compare/v1.0.4...v2.0.0) (2020-07-31)
 
