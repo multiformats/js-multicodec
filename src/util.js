@@ -8,7 +8,6 @@ module.exports = {
   numberToUint8Array,
   uint8ArrayToNumber,
   varintUint8ArrayEncode,
-  varintUint8ArrayDecode,
   varintEncode
 }
 
@@ -26,10 +25,6 @@ function numberToUint8Array (num) {
 
 function varintUint8ArrayEncode (input) {
   return Uint8Array.from(varint.encode(uint8ArrayToNumber(input)))
-}
-
-function varintUint8ArrayDecode (input) {
-  return numberToUint8Array(varint.decode(input))
 }
 
 function varintEncode (num) {
