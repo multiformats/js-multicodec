@@ -1,6 +1,6 @@
 {
   "name": "multicodec",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "JavaScript implementation of the multicodec specification",
   "leadMaintainer": "Henrique Dias <hacdias@gmail.com>",
   "main": "src/index.js",
@@ -63,6 +63,7 @@
     "Filip Š <filip.stamcar@hotmail.com>",
     "Hugo Dias <hugomrdias@gmail.com>",
     "Joel Thorstensson <oed@3box.io>",
+    "Jonas Kruckenberg <iterpre@protonmail.com>",
     "Marcin Rataj <lidel@lidel.org>",
     "Vasco Santos <vasco.santos@moxy.studio>",
     "Carson Farmer <carson.farmer@gmail.com>"
