@@ -85,7 +85,7 @@ exports.getNumber = (name) => {
   if (code === undefined) {
     throw new Error('Codec `' + name + '` not found')
   }
-  return util.varintUint8ArrayDecode(code)[0]
+  return varint.decode(code)
 }
 
 /**

@@ -4,6 +4,7 @@
 const { expect } = require('aegir/utils/chai')
 const multicodec = require('../src')
 const uint8ArrayFromString = require('uint8arrays/from-string')
+const baseTable = require('../src/base-table.json')
 
 describe('multicodec', () => {
   it('add prefix through multicodec (string)', () => {
@@ -53,9 +54,13 @@ describe('multicodec', () => {
   it('returns the codec number from name', () => {
     expect(multicodec.getNumber('eth-block')).to.eql(144)
     expect(multicodec.getNumber('dag-pb')).to.eql(112)
-    // NOTE vmx 2019-09019: Uncomment once
-    // https://github.com/multiformats/js-multicodec/issues/50 is fixed
-    // expect(multicodec.getNumber('blake2b-8')).to.eql(0xb201)
+    expect(multicodec.getNumber('blake2b-8')).to.eql(0xb201)
+  })
+
+  it('returns all codec numbers from names', () => {
+    for (const name in baseTable) {
+      expect(multicodec.getNumber(name)).to.eql(baseTable[name])
+    }
   })
 
   it('returns the codec number from constant', () => {
