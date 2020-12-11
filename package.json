@@ -4,6 +4,10 @@
   "description": "JavaScript implementation of the multicodec specification",
   "leadMaintainer": "Henrique Dias <hacdias@gmail.com>",
   "main": "src/index.js",
+  "types": "dist/src/index.d.ts",
+  "typesVersions": {
+    "*": { "src/*": ["dist/src/*", "dist/src/*/index"] }
+  },
   "scripts": {
     "lint": "aegir lint",
     "test": "aegir test",
@@ -68,9 +72,5 @@
     "Peter-Jan Brone <peter-jan@settlemint.com>",
     "Vasco Santos <vasco.santos@moxy.studio>",
     "Carson Farmer <carson.farmer@gmail.com>"
-  ],
-  "types": "dist/src/index.d.ts",
-  "typesVersions": {
-    "*": { "src/*": ["dist/src/*", "dist/src/*/index"] }
-  }
+  ]
 }
