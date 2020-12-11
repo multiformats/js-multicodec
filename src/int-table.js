@@ -12,7 +12,9 @@ const nameTable = new Map()
 
 for (const encodingName in baseTable) {
   const code = baseTable[encodingName]
-  nameTable.set(code, /** @type {CodecName} */(encodingName))
+  if (!nameTable.has(code)) {
+    nameTable.set(code, /** @type {CodecName} */(encodingName))
+  }
 }
 
 module.exports = Object.freeze(nameTable)
