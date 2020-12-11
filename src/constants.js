@@ -1,14 +1,12 @@
 'use strict'
 
-/** @typedef {import('./generated-types').ConstantNumberMap} ConstantNumberMap */
+const table = require('./base-table.json')
 
-const { baseTable } = require('./base-table')
+// map for codecConstant -> code
+const constants = {}
 
-const constants = /** @type {ConstantNumberMap} */({})
-
-for (const [name, code] of Object.entries(baseTable)) {
-  const constant = name.toUpperCase().replace(/-/g, '_')
-  constants[constant] = code
+for (const [name, code] of Object.entries(table)) {
+  constants[name.toUpperCase().replace(/-/g, '_')] = code
 }
 
 module.exports = Object.freeze(constants)

@@ -1,13 +1,10 @@
 /* eslint-env mocha */
 'use strict'
 
-/** @typedef {import("../src/generated-types").CodecName} CodecName */
-/** @typedef {import("../src/generated-types").CodecNumber} CodecNumber */
-
 const { expect } = require('aegir/utils/chai')
 const multicodec = require('../src')
 const uint8ArrayFromString = require('uint8arrays/from-string')
-const { baseTable } = require('../src/base-table')
+const baseTable = require('../src/base-table.json')
 
 describe('multicodec', () => {
   it('add prefix through multicodec (string)', () => {
@@ -62,7 +59,7 @@ describe('multicodec', () => {
 
   it('returns all codec numbers from names', () => {
     for (const name in baseTable) {
-      expect(multicodec.getNumber(/** @type {CodecName} */(name))).to.eql(baseTable[name])
+      expect(multicodec.getNumber(name)).to.eql(baseTable[name])
     }
   })
 
@@ -91,7 +88,6 @@ describe('multicodec', () => {
 
   it('throws error on unknown codec name when getting the code', () => {
     expect(() => {
-      // @ts-expect-error
       multicodec.getCodeVarint('this-codec-doesnt-exist')
     }).to.throw(
       'Codec `this-codec-doesnt-exist` not found'

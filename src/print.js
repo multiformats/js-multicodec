@@ -1,16 +1,12 @@
 'use strict'
 
-/** @typedef {import('./generated-types').CodecName} CodecName */
-/** @typedef {import('./generated-types').NumberNameMap} NumberNameMap */
+const table = require('./base-table.json')
 
-const { baseTable } = require('./base-table')
+// map for code -> print friendly name
+const tableByCode = {}
 
-const tableByCode = /** @type {NumberNameMap} */({})
-
-for (const [name, code] of Object.entries(baseTable)) {
-  if (tableByCode[code] === undefined) {
-    tableByCode[code] = /** @type {CodecName} **/(name)
-  }
+for (const [name, code] of Object.entries(table)) {
+  if (tableByCode[code] === undefined) tableByCode[code] = name
 }
 
-module.exports = /** @type {NumberNameMap} */(Object.freeze(tableByCode))
+module.exports = Object.freeze(tableByCode)

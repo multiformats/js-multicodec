@@ -1,11 +1,10 @@
 'use strict'
 
-/** @typedef {import('./generated-types').NameUint8ArrayMap} NameUint8ArrayMap */
-
-const { baseTable } = require('./base-table')
+const baseTable = require('./base-table.json')
 const varintEncode = require('./util').varintEncode
 
-const varintTable = /** @type {NameUint8ArrayMap} */ ({})
+// map for codecName -> codeVarintUint8Array
+const varintTable = {}
 
 for (const encodingName in baseTable) {
   const code = baseTable[encodingName]
