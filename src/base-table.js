@@ -20,7 +20,7 @@
  */
 
 /**
- * @type { Record<CodecName,CodecNumber> }
+ * @type {Record<CodecName,CodecNumber>}
  */
 const baseTable = Object.freeze({
   'identity': 0x00,

@@ -1,14 +1,13 @@
 'use strict'
 
-/** @typedef {import('./base-table').CodecConstant} CodecConstant */
-/** @typedef {import('./base-table').CodecNumber} CodecNumber */
+/** @typedef {import('./types').ConstantNumberMap} ConstantNumberMap */
 
 const { baseTable } = require('./base-table')
 
-const constants = /** @type {Record<CodecConstant, CodecNumber>} */({})
+const constants = /** @type {ConstantNumberMap} */({})
 
 for (const [name, code] of Object.entries(baseTable)) {
-  const constant = /** @type {CodecConstant} */(name.toUpperCase().replace(/-/g, '_'))
+  const constant = name.toUpperCase().replace(/-/g, '_')
   constants[constant] = code
 }
 

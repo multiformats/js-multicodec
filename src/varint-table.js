@@ -1,16 +1,15 @@
 'use strict'
 
-/** @typedef {import('./base-table').CodecName} CodecName */
-/** @typedef {import('./base-table').CodecNumber} CodecNumber  */
+/** @typedef {import('./types').NameUint8ArrayMap} NameUint8ArrayMap */
 
 const { baseTable } = require('./base-table')
 const varintEncode = require('./util').varintEncode
 
-const varintTable = /** @type {Record<CodecName,Uint8Array>} */ ({})
+const varintTable = /** @type {NameUint8ArrayMap} */ ({})
 
 for (const encodingName in baseTable) {
   const code = baseTable[encodingName]
-  varintTable[/** @type {CodecName} */(encodingName)] = varintEncode(code)
+  varintTable[encodingName] = varintEncode(code)
 }
 
 module.exports = Object.freeze(varintTable)
