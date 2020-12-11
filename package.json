@@ -1,6 +1,6 @@
 {
   "name": "multicodec",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "JavaScript implementation of the multicodec specification",
   "leadMaintainer": "Henrique Dias <hacdias@gmail.com>",
   "main": "src/index.js",
@@ -55,8 +55,8 @@
     "Volker Mische <volker.mische@gmail.com>",
     "Mikeal Rogers <mikeal.rogers@gmail.com>",
     "Richard Littauer <richard.littauer@gmail.com>",
-    "wanderer <mjbecze@gmail.com>",
     "achingbrain <alex@achingbrain.net>",
+    "wanderer <mjbecze@gmail.com>",
     "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
     "Rod Vagg <rod@vagg.org>",
     "ᴠɪᴄᴛᴏʀ ʙᴊᴇʟᴋʜᴏʟᴍ <victorbjelkholm@gmail.com>",
@@ -65,6 +65,7 @@
     "Joel Thorstensson <oed@3box.io>",
     "Jonas Kruckenberg <iterpre@protonmail.com>",
     "Marcin Rataj <lidel@lidel.org>",
+    "Peter-Jan Brone <peter-jan@settlemint.com>",
     "Vasco Santos <vasco.santos@moxy.studio>",
     "Carson Farmer <carson.farmer@gmail.com>"
   ]
