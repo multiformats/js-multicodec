@@ -4,8 +4,8 @@
 [![](https://img.shields.io/badge/project-multiformats-blue.svg?style=flat-square)](https://github.com/multiformats/multiformats)
 [![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](https://webchat.freenode.net/?channels=%23ipfs)
 [![](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-[![Travis CI](https://flat.badgen.net/travis/multiformats/js-multicodec)](https://travis-ci.com/multiformats/js-multicodec)
-[![Coverage Status](https://coveralls.io/repos/github/multiformats/js-multicodec/badge.svg?branch=master)](https://coveralls.io/github/multiformats/js-multiformats?branch=master)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/multiformats/js-multicodec/ci/master?style=flat-square)
+![Codecov](https://img.shields.io/codecov/c/github/multiformats/js-multicodec?style=flat-square)
 
 > JavaScript implementation of the multicodec specification
 
