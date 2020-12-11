@@ -1,3 +1,12 @@
+## [2.0.3](https://github.com/multiformats/js-multicodec/compare/v2.0.2...v2.0.3) (2020-12-11)
+
+
+### Features
+
+* add ts types ([#70](https://github.com/multiformats/js-multicodec/issues/70)) ([25cf33f](https://github.com/multiformats/js-multicodec/commit/25cf33fdc392da21d776f6f4e85b678101724364))
+
+
+
 ## [2.0.2](https://github.com/multiformats/js-multicodec/compare/v2.0.1...v2.0.2) (2020-12-11)
 
 
