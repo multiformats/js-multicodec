@@ -1,6 +1,6 @@
 'use strict'
 
-/** @typedef {import('./types').ConstantNumberMap} ConstantNumberMap */
+/** @typedef {import('./generated-types').ConstantNumberMap} ConstantNumberMap */
 
 const { baseTable } = require('./base-table')
 

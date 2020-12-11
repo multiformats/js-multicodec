@@ -1,6 +1,6 @@
 'use strict'
 
-/** @typedef {import('./types').NameUint8ArrayMap} NameUint8ArrayMap */
+/** @typedef {import('./generated-types').NameUint8ArrayMap} NameUint8ArrayMap */
 
 const { baseTable } = require('./base-table')
 const varintEncode = require('./util').varintEncode
