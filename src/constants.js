@@ -2,17 +2,14 @@
 
 const table = require('./base-table.json')
 
-const constants = {}
+const constants = /** @type {Record<CodecConstant, CodecNumber>} */({})
 
 for (const [name, code] of Object.entries(table)) {
-  constants[name.toUpperCase().replace(/-/g, '_')] = code
+  const constant = /** @type {CodecConstant} */(name.toUpperCase().replace(/-/g, '_'))
+  constants[constant] = /** @type {CodecNumber} */(code)
 }
 
-/**
- * @type {Object<CodecConstant,CodecNumber>}
- */
-const toExport = Object.freeze(constants)
-module.exports = toExport
+module.exports = Object.freeze(constants)
 
 /** @typedef {import('./types').CodecConstant} CodecConstant */
 /** @typedef {import('./types').CodecNumber} CodecNumber */
