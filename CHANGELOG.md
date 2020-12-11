@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/multiformats/js-multicodec/compare/v2.0.4...v2.1.0) (2020-12-11)
+
+
+### Reverts
+
+* Revert "Revert "feat: add ts types (#70)"" ([c19b337](https://github.com/multiformats/js-multicodec/commit/c19b3377bb2c54d539e6700fda2d486efcfb7372)), closes [#70](https://github.com/multiformats/js-multicodec/issues/70)
+
+
+
 ## [2.0.4](https://github.com/multiformats/js-multicodec/compare/v2.0.3...v2.0.4) (2020-12-11)
 
 
