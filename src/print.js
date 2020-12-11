@@ -1,15 +1,15 @@
 'use strict'
 
-/** @typedef {import('./types').CodecName} CodecName */
-/** @typedef {import('./types').CodecNumber} CodecNumber */
+/** @typedef {import('./base-table').CodecName} CodecName */
+/** @typedef {import('./base-table').CodecNumber} CodecNumber */
 
-const table = require('./base-table.json')
+const { baseTable } = require('./base-table')
 
 const tableByCode = /** @type {Record<CodecNumber,CodecName>} */({})
 
-for (const [name, code] of Object.entries(table)) {
+for (const [name, code] of Object.entries(baseTable)) {
   if (tableByCode[code] === undefined) {
-    tableByCode[/** @type {CodecNumber} */(code)] = /** @type {CodecName} */(name)
+    tableByCode[code] = /** @type {CodecName} */(name)
   }
 }
 

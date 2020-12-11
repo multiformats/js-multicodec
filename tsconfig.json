@@ -3,9 +3,6 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "files": [
-    "src/base-table.json"
-  ],
   "include": [
     "test",
     "src"

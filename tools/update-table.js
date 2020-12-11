@@ -1,50 +1,64 @@
 'use strict'
 
-const bent = require('bent')
-const path = require('path')
-
-const get = bent('string')
-const url = 'https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv'
 const fs = require('fs')
-
-const parse = async function * () {
-  const str = await get(url)
-  const lines = str.split('\n')
-  lines.shift()
-  for (const line of lines) {
-    if (!line.length) continue
-    const [name, tag, code] = line.split(',')
-    yield { name: name.trim(), tag: tag.trim(), code: parseInt(code.trim(), 16) }
-  }
-}
+const path = require('path')
+const http = require('ipfs-utils/src/http')
+const url = 'https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv'
 
 const run = async () => {
-  const table = {}
+  const rsp = await http.get(url)
+  const lines = (await rsp.text()).split('\n')
+  const names = []
+  const codes = []
+  const processed = lines
+    .slice(1, lines.length - 1)
+    .map(l => {
+      const [name, tag, code] = l.split(',')
+      return [name.trim(), tag.trim(), code.trim()]
+    })
+    .reduce((acc, l, index, arr) => {
+      names.push(`"${l[0]}"`)
+      codes.push(`${l[2].replace('\'', '')}`)
+      acc += `  '${l[0]}': ${l[2].replace('\'', '')}`
 
-  for await (const { name, code } of parse()) {
-    table[name] = code
-  }
+      if (index !== arr.length - 1) {
+        acc += ',\n'
+      }
+      return acc
+    }, '')
 
   const template = `/* eslint quote-props: off */
+'use strict'
 
 /**
  * Constant names for all available codecs
+ *
+ * @typedef { ${names.map(n => `${n.toUpperCase().replace(/-/g, '_')}`).join(' | ')} } CodecConstant
  */
-export type CodecConstant = ${Object.keys(table).map(n => `'${n.toUpperCase().replace(/-/g, '_')}'`).join(' | ')};
 
 /**
  * Names for all available codecs
+ *
+ * @typedef { ${names.join(' | ')} } CodecName
  */
-export type CodecName = ${Object.keys(table).map(n => `'${n}'`).join(' | ')};
 
 /**
  * Number for all available codecs
+ *
+ * @typedef { ${codes.join(' | ')} } CodecNumber
+/
+
+/**
+ * @type { Record<CodecName,CodecNumber> }
  */
-export type CodecNumber = ${Object.values(table).join(' | ')};
+const baseTable = Object.freeze({
+${processed}
+})
+
+module.exports = { baseTable }
 `
 
-  fs.writeFileSync(path.join(__dirname, '../src/types.ts'), template)
-  fs.writeFileSync(path.join(__dirname, '../src/base-table.json'), JSON.stringify(table, null, 2))
+  fs.writeFileSync(path.join(__dirname, '../src/base-table.js'), template)
 }
 
 run()

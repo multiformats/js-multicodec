@@ -1,10 +1,13 @@
 /* eslint-env mocha */
 'use strict'
 
+/** @typedef {import("../src/base-table").CodecName} CodecName */
+/** @typedef {import("../src/base-table").CodecNumber} CodecNumber */
+
 const { expect } = require('aegir/utils/chai')
 const multicodec = require('../src')
 const uint8ArrayFromString = require('uint8arrays/from-string')
-const baseTable = require('../src/base-table.json')
+const { baseTable } = require('../src/base-table')
 
 describe('multicodec', () => {
   it('add prefix through multicodec (string)', () => {
@@ -107,6 +110,3 @@ describe('multicodec', () => {
     )
   })
 })
-
-/** @typedef {import("../src/types").CodecName} CodecName */
-/** @typedef {import("../src/types").CodecNumber} CodecNumber */
