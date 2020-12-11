@@ -54,6 +54,7 @@ exports.rmPrefix = (data) => {
 
 /**
  * Get the codec of the prefixed data.
+ *
  * @param {Uint8Array} prefixedData
  * @returns {string}
  */
@@ -68,6 +69,7 @@ exports.getCodec = (prefixedData) => {
 
 /**
  * Get the name of the codec.
+ *
  * @param {number} codec
  * @returns {string}
  */
@@ -77,6 +79,7 @@ exports.getName = (codec) => {
 
 /**
  * Get the code of the codec
+ *
  * @param {string} name
  * @returns {number}
  */
@@ -90,6 +93,7 @@ exports.getNumber = (name) => {
 
 /**
  * Get the code of the prefixed data.
+ *
  * @param {Uint8Array} prefixedData
  * @returns {number}
  */
@@ -99,6 +103,7 @@ exports.getCode = (prefixedData) => {
 
 /**
  * Get the code as varint of a codec name.
+ *
  * @param {string} codecName
  * @returns {Uint8Array}
  */
@@ -112,7 +117,8 @@ exports.getCodeVarint = (codecName) => {
 
 /**
  * Get the varint of a code.
- * @param {Number} code
+ *
+ * @param {number} code
  * @returns {Array.<number>}
  */
 exports.getVarint = (code) => {
