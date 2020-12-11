@@ -40,11 +40,11 @@ describe('multicodec', () => {
     const buf = uint8ArrayFromString('hey')
     const prefixedBuf = multicodec.addPrefix('dag-cbor', buf)
     const code = multicodec.getCode(prefixedBuf)
-    expect(code).to.eql(multicodec.DAG_CBOR)
+    expect(code).to.eql(multicodec.codecs.DAG_CBOR)
   })
 
   it('returns varint from code', () => {
-    const code = multicodec.getVarint(multicodec.KECCAK_256)
+    const code = multicodec.getVarint(multicodec.codecs.KECCAK_256)
     expect(code).to.eql([0x1b])
   })
 
@@ -67,9 +67,9 @@ describe('multicodec', () => {
   })
 
   it('returns the codec number from constant', () => {
-    expect(multicodec.ETH_BLOCK).to.eql(144)
-    expect(multicodec.DAG_PB).to.eql(112)
-    expect(multicodec.BLAKE2B_8).to.eql(0xb201)
+    expect(multicodec.codecs.ETH_BLOCK).to.eql(144)
+    expect(multicodec.codecs.DAG_PB).to.eql(112)
+    expect(multicodec.codecs.BLAKE2B_8).to.eql(0xb201)
   })
 
   it('returns the name from codec number', () => {
@@ -78,10 +78,10 @@ describe('multicodec', () => {
     expect(multicodec.print[0x0111]).to.eql('udp')
     expect(multicodec.print[0xb201]).to.eql('blake2b-8')
 
-    expect(multicodec.print[multicodec.ETH_BLOCK]).to.eql('eth-block')
-    expect(multicodec.print[multicodec.DAG_PB]).to.eql('dag-pb')
-    expect(multicodec.print[multicodec.UDP]).to.eql('udp')
-    expect(multicodec.print[multicodec.BLAKE2B_8]).to.eql('blake2b-8')
+    expect(multicodec.print[multicodec.codecs.ETH_BLOCK]).to.eql('eth-block')
+    expect(multicodec.print[multicodec.codecs.DAG_PB]).to.eql('dag-pb')
+    expect(multicodec.print[multicodec.codecs.UDP]).to.eql('udp')
+    expect(multicodec.print[multicodec.codecs.BLAKE2B_8]).to.eql('blake2b-8')
   })
 
   it('returns p2p when 0x01a5 is used', () => {

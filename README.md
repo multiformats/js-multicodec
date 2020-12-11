@@ -41,7 +41,7 @@ const prefixedProtobuf = multicodec.addPrefix('protobuf', protobufBuffer)
 // prefixedProtobuf 0x50...
 
 // The multicodec codec values can be accessed directly:
-console.log(multicodec.DAG_CBOR)
+console.log(multicodec.codecs.DAG_CBOR)
 // 113
 
 // To get the string representation of a codec, e.g. for error messages:

@@ -127,7 +127,7 @@ function getVarint (code) {
 }
 
 // Make the constants top-level constants
-const constants = require('./constants')
+const codecs = require('./constants')
 
 // Human friendly names for printing, e.g. in error messages
 const print = require('./print')
@@ -142,5 +142,5 @@ module.exports = {
   getCodeVarint,
   getVarint,
   print,
-  ...constants
+  codecs
 }
