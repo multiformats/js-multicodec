@@ -11,25 +11,25 @@
  */
 'use strict'
 
+/** @typedef {import('./generated-types').CodecName} CodecName */
+/** @typedef {import('./generated-types').CodecNumber} CodecNumber */
+
 const varint = require('varint')
 const intTable = require('./int-table')
 const codecNameToCodeVarint = require('./varint-table')
 const util = require('./util')
 const uint8ArrayConcat = require('uint8arrays/concat')
 
-exports = module.exports
-
 /**
  * Prefix a buffer with a multicodec-packed.
  *
- * @param {string|number} multicodecStrOrCode
+ * @param {CodecName|Uint8Array} multicodecStrOrCode
  * @param {Uint8Array} data
  * @returns {Uint8Array}
  */
-exports.addPrefix = (multicodecStrOrCode, data) => {
+function addPrefix (multicodecStrOrCode, data) {
   let prefix
 
-  // @ts-ignore: TS2358
   if (multicodecStrOrCode instanceof Uint8Array) {
     prefix = util.varintUint8ArrayEncode(multicodecStrOrCode)
   } else {
@@ -48,7 +48,7 @@ exports.addPrefix = (multicodecStrOrCode, data) => {
  * @param {Uint8Array} data
  * @returns {Uint8Array}
  */
-exports.rmPrefix = (data) => {
+function rmPrefix (data) {
   varint.decode(data)
   return data.slice(varint.decode.bytes)
 }
@@ -57,9 +57,9 @@ exports.rmPrefix = (data) => {
  * Get the codec of the prefixed data.
  *
  * @param {Uint8Array} prefixedData
- * @returns {string}
+ * @returns {CodecName}
  */
-exports.getCodec = (prefixedData) => {
+function getCodec (prefixedData) {
   const code = varint.decode(prefixedData)
   const codecName = intTable.get(code)
   if (codecName === undefined) {
@@ -71,20 +71,20 @@ exports.getCodec = (prefixedData) => {
 /**
  * Get the name of the codec.
  *
- * @param {number} codec
- * @returns {string}
+ * @param {CodecNumber} codec
+ * @returns {CodecName|undefined}
  */
-exports.getName = (codec) => {
+function getName (codec) {
   return intTable.get(codec)
 }
 
 /**
  * Get the code of the codec
  *
- * @param {string} name
- * @returns {number}
+ * @param {CodecName} name
+ * @returns {CodecNumber}
  */
-exports.getNumber = (name) => {
+function getNumber (name) {
   const code = codecNameToCodeVarint[name]
   if (code === undefined) {
     throw new Error('Codec `' + name + '` not found')
@@ -96,19 +96,19 @@ exports.getNumber = (name) => {
  * Get the code of the prefixed data.
  *
  * @param {Uint8Array} prefixedData
- * @returns {number}
+ * @returns {CodecNumber}
  */
-exports.getCode = (prefixedData) => {
+function getCode (prefixedData) {
   return varint.decode(prefixedData)
 }
 
 /**
  * Get the code as varint of a codec name.
  *
- * @param {string} codecName
+ * @param {CodecName} codecName
  * @returns {Uint8Array}
  */
-exports.getCodeVarint = (codecName) => {
+function getCodeVarint (codecName) {
   const code = codecNameToCodeVarint[codecName]
   if (code === undefined) {
     throw new Error('Codec `' + codecName + '` not found')
@@ -119,16 +119,28 @@ exports.getCodeVarint = (codecName) => {
 /**
  * Get the varint of a code.
  *
- * @param {number} code
+ * @param {CodecNumber} code
  * @returns {Array.<number>}
  */
-exports.getVarint = (code) => {
+function getVarint (code) {
   return varint.encode(code)
 }
 
 // Make the constants top-level constants
 const constants = require('./constants')
-Object.assign(exports, constants)
 
 // Human friendly names for printing, e.g. in error messages
-exports.print = require('./print')
+const print = require('./print')
+
+module.exports = {
+  addPrefix,
+  rmPrefix,
+  getCodec,
+  getName,
+  getNumber,
+  getCode,
+  getCodeVarint,
+  getVarint,
+  print,
+  ...constants
+}
