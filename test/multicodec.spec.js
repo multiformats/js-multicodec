@@ -73,20 +73,20 @@ describe('multicodec', () => {
   })
 
   it('returns the name from codec number', () => {
-    expect(multicodec.print[144]).to.eql('eth-block')
-    expect(multicodec.print[112]).to.eql('dag-pb')
-    expect(multicodec.print[0x0111]).to.eql('udp')
-    expect(multicodec.print[0xb201]).to.eql('blake2b-8')
+    expect(multicodec.getName(144)).to.eql('eth-block')
+    expect(multicodec.getName(112)).to.eql('dag-pb')
+    expect(multicodec.getName(0x0111)).to.eql('udp')
+    expect(multicodec.getName(0xb201)).to.eql('blake2b-8')
 
-    expect(multicodec.print[multicodec.ETH_BLOCK]).to.eql('eth-block')
-    expect(multicodec.print[multicodec.DAG_PB]).to.eql('dag-pb')
-    expect(multicodec.print[multicodec.UDP]).to.eql('udp')
-    expect(multicodec.print[multicodec.BLAKE2B_8]).to.eql('blake2b-8')
+    expect(multicodec.getName(multicodec.ETH_BLOCK)).to.eql('eth-block')
+    expect(multicodec.getName(multicodec.DAG_PB)).to.eql('dag-pb')
+    expect(multicodec.getName(multicodec.UDP)).to.eql('udp')
+    expect(multicodec.getName(multicodec.BLAKE2B_8)).to.eql('blake2b-8')
   })
 
   it('returns p2p when 0x01a5 is used', () => {
     // `ipfs` and `p2p` are assigned to `0x01a5`, `ipfs` is deprecated
-    expect(multicodec.print[0x01a5]).to.eql('p2p')
+    expect(multicodec.getName(0x01a5)).to.eql('p2p')
   })
 
   it('throws error on unknown codec name when getting the code', () => {

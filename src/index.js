@@ -69,7 +69,7 @@ function getCodec (prefixedData) {
 }
 
 /**
- * Get the name of the codec.
+ * Get the name of the codec (human friendly).
  *
  * @param {CodecNumber} codec
  * @returns {CodecName|undefined}
@@ -129,9 +129,6 @@ function getVarint (code) {
 // Make the constants top-level constants
 const constants = require('./constants')
 
-// Human friendly names for printing, e.g. in error messages
-const print = require('./print')
-
 module.exports = {
   addPrefix,
   rmPrefix,
@@ -141,6 +138,5 @@ module.exports = {
   getCode,
   getCodeVarint,
   getVarint,
-  print,
   ...constants
 }
