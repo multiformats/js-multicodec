@@ -3,7 +3,6 @@
 const baseTable = require('./base-table.json')
 const varintEncode = require('./util').varintEncode
 
-// map for codecName -> codeVarintUint8Array
 const varintTable = {}
 
 for (const encodingName in baseTable) {
@@ -11,4 +10,11 @@ for (const encodingName in baseTable) {
   varintTable[encodingName] = varintEncode(code)
 }
 
-module.exports = Object.freeze(varintTable)
+/**
+ * @type { Object<CodecName,Uint8Array> }
+ */
+const toExport = Object.freeze(varintTable)
+module.exports = toExport
+
+/** @typedef {import('./types').CodecName} CodecName */
+/** @typedef {import('./types').CodecNumber} CodecNumber  */

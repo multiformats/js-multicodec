@@ -225,7 +225,7 @@ CID {
     ^
 
 Error: Codec `my-codec` not found
-    at Object.exports.getCodeVarint (/tmp/addcodecbug/node_modules/cids/node_modules/multicodec/src/index.js:76:11)
+    at Object.function getCodeVarint (/tmp/addcodecbug/node_modules/cids/node_modules/multicodec/src/index.js:76:11)
     at ClassIsWrapper.get buffer [as buffer] (/tmp/addcodecbug/node_modules/cids/src/index.js:131:22)
     at ClassIsWrapper.toBaseEncodedString (/tmp/addcodecbug/node_modules/cids/src/index.js:202:44)
     at Object.<anonymous> (/tmp/addcodecbug/index.js:17:17)

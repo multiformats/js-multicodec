@@ -25,6 +25,26 @@ const run = async () => {
     table[name] = code
   }
 
+  const template = `/* eslint quote-props: off */
+
+/**
+ * Constant names for all available codecs
+ */
+export type CodecConstant = ${Object.keys(table).map(n => `'${n.toUpperCase().replace(/-/g, '_')}'`).join(' | ')};
+
+/**
+ * Names for all available codecs
+ */
+export type CodecName = ${Object.keys(table).map(n => `'${n}'`).join(' | ')};
+
+/**
+ * Number for all available codecs
+ */
+export type CodecNumber = ${Object.values(table).join(' | ')};
+`
+
+  fs.writeFileSync(path.join(__dirname, '../src/types.ts'), template)
   fs.writeFileSync(path.join(__dirname, '../src/base-table.json'), JSON.stringify(table, null, 2))
 }
+
 run()

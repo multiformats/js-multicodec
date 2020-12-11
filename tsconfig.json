@@ -7,6 +7,7 @@
       "src/base-table.json"
     ],
     "include": [
+      "test",
       "src"
     ]
 }

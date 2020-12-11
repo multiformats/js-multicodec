@@ -1,6 +1,6 @@
 'use strict'
 
-const multicodec = require('multicodec')
+const multicodec = require('.')
 
 const prefixedProtobuf = multicodec.addPrefix('protobuf', new TextEncoder().encode('some protobuf code'))
 

@@ -22,7 +22,7 @@ exports = module.exports
 /**
  * Prefix a buffer with a multicodec-packed.
  *
- * @param {string|number} multicodecStrOrCode
+ * @param {CodecNumber|CodecName} multicodecStrOrCode
  * @param {Uint8Array} data
  * @returns {Uint8Array}
  */
@@ -57,7 +57,7 @@ exports.rmPrefix = (data) => {
  * Get the codec of the prefixed data.
  *
  * @param {Uint8Array} prefixedData
- * @returns {string}
+ * @returns {CodecName}
  */
 exports.getCodec = (prefixedData) => {
   const code = varint.decode(prefixedData)
@@ -71,8 +71,8 @@ exports.getCodec = (prefixedData) => {
 /**
  * Get the name of the codec.
  *
- * @param {number} codec
- * @returns {string}
+ * @param {CodecNumber} codec
+ * @returns {CodecName|undefined}
  */
 exports.getName = (codec) => {
   return intTable.get(codec)
@@ -81,8 +81,8 @@ exports.getName = (codec) => {
 /**
  * Get the code of the codec
  *
- * @param {string} name
- * @returns {number}
+ * @param {CodecName} name
+ * @returns {CodecNumber}
  */
 exports.getNumber = (name) => {
   const code = codecNameToCodeVarint[name]
@@ -96,7 +96,7 @@ exports.getNumber = (name) => {
  * Get the code of the prefixed data.
  *
  * @param {Uint8Array} prefixedData
- * @returns {number}
+ * @returns {CodecNumber}
  */
 exports.getCode = (prefixedData) => {
   return varint.decode(prefixedData)
@@ -105,7 +105,7 @@ exports.getCode = (prefixedData) => {
 /**
  * Get the code as varint of a codec name.
  *
- * @param {string} codecName
+ * @param {CodecName} codecName
  * @returns {Uint8Array}
  */
 exports.getCodeVarint = (codecName) => {
@@ -119,7 +119,7 @@ exports.getCodeVarint = (codecName) => {
 /**
  * Get the varint of a code.
  *
- * @param {number} code
+ * @param {CodecNumber} code
  * @returns {Array.<number>}
  */
 exports.getVarint = (code) => {
@@ -132,3 +132,6 @@ Object.assign(exports, constants)
 
 // Human friendly names for printing, e.g. in error messages
 exports.print = require('./print')
+
+/** @typedef {import('./types').CodecName} CodecName */
+/** @typedef {import('./types').CodecNumber} CodecNumber */

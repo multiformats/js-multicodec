@@ -59,7 +59,7 @@ describe('multicodec', () => {
 
   it('returns all codec numbers from names', () => {
     for (const name in baseTable) {
-      expect(multicodec.getNumber(name)).to.eql(baseTable[name])
+      expect(multicodec.getNumber(/** @type {CodecName} */(name))).to.eql(baseTable[name])
     }
   })
 
@@ -88,6 +88,7 @@ describe('multicodec', () => {
 
   it('throws error on unknown codec name when getting the code', () => {
     expect(() => {
+      // @ts-expect-error
       multicodec.getCodeVarint('this-codec-doesnt-exist')
     }).to.throw(
       'Codec `this-codec-doesnt-exist` not found'
@@ -106,3 +107,6 @@ describe('multicodec', () => {
     )
   })
 })
+
+/** @typedef {import("../src/types").CodecName} CodecName */
+/** @typedef {import("../src/types").CodecNumber} CodecNumber */
