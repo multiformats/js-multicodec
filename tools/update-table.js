@@ -27,29 +27,35 @@ const run = async () => {
       return acc
     }, '')
 
-  const template = `/* eslint quote-props: off */
+  const typesTemplate = `/* eslint quote-props: off */
 'use strict'
 
 /**
  * Constant names for all available codecs
- *
- * @typedef { ${names.map(n => `${n.toUpperCase().replace(/-/g, '_')}`).join(' | ')} } CodecConstant
  */
+export type CodecConstant = ${names.map(n => `${n.toUpperCase().replace(/-/g, '_')}`).join(' | ')};
 
 /**
  * Names for all available codecs
- *
- * @typedef { ${names.join(' | ')} } CodecName
  */
+export type CodecName = ${names.join(' | ')};
 
 /**
  * Number for all available codecs
- *
- * @typedef { ${codes.join(' | ')} } CodecNumber
  */
+export type CodecNumber = ${codes.join(' | ')};
+
+export type ConstantNumberMap = Record<CodecConstant, CodecNumber>
+export type NameUint8ArrayMap = Record<CodecName, Uint8Array>
+export type NumberNameMap = Record<CodecNumber, CodecName>
+export type NameNumberMap = Record<CodecName, CodecNumber>
+`
+
+  const tableTemplate = `/* eslint quote-props: off */
+'use strict'
 
 /**
- * @type { Record<CodecName,CodecNumber> }
+ * @type {import('./types').NameNumberMap}
  */
 const baseTable = Object.freeze({
 ${processed}
@@ -58,7 +64,8 @@ ${processed}
 module.exports = { baseTable }
 `
 
-  fs.writeFileSync(path.join(__dirname, '../src/base-table.js'), template)
+  fs.writeFileSync(path.join(__dirname, '../src/types.ts'), typesTemplate)
+  fs.writeFileSync(path.join(__dirname, '../src/base-table.js'), tableTemplate)
 }
 
 run()

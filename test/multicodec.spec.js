@@ -1,8 +1,8 @@
 /* eslint-env mocha */
 'use strict'
 
-/** @typedef {import("../src/base-table").CodecName} CodecName */
-/** @typedef {import("../src/base-table").CodecNumber} CodecNumber */
+/** @typedef {import("../src/types").CodecName} CodecName */
+/** @typedef {import("../src/types").CodecNumber} CodecNumber */
 
 const { expect } = require('aegir/utils/chai')
 const multicodec = require('../src')

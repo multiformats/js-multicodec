@@ -1,7 +1,7 @@
 'use strict'
 
-/** @typedef {import('./base-table').CodecName} CodecName */
-/** @typedef {import('./base-table').CodecNumber} CodecNumber */
+/** @typedef {import('./types').CodecName} CodecName */
+/** @typedef {import('./types').CodecNumber} CodecNumber */
 
 const { baseTable } = require('./base-table')
 

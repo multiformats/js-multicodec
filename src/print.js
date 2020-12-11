@@ -1,6 +1,6 @@
 'use strict'
 
-/** @typedef {import('./base-table').CodecName} CodecName */
+/** @typedef {import('./types').CodecName} CodecName */
 /** @typedef {import('./types').NumberNameMap} NumberNameMap */
 
 const { baseTable } = require('./base-table')
@@ -13,4 +13,4 @@ for (const [name, code] of Object.entries(baseTable)) {
   }
 }
 
-module.exports = Object.freeze(tableByCode)
+module.exports = /** @type {NumberNameMap} */(Object.freeze(tableByCode))
