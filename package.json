@@ -45,7 +45,7 @@
     "varint": "^6.0.0"
   },
   "devDependencies": {
-    "aegir": "^23.0.0",
+    "aegir": "^29.2.2",
     "bent": "^7.3.12",
     "pre-push": "~0.1.1"
   },
