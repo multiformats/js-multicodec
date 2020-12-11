@@ -1,3 +1,7 @@
+## [2.0.4](https://github.com/multiformats/js-multicodec/compare/v2.0.3...v2.0.4) (2020-12-11)
+
+
+
 ## [2.0.3](https://github.com/multiformats/js-multicodec/compare/v2.0.2...v2.0.3) (2020-12-11)
 
 
