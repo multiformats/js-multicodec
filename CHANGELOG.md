@@ -1,3 +1,12 @@
+## [2.0.2](https://github.com/multiformats/js-multicodec/compare/v2.0.1...v2.0.2) (2020-12-11)
+
+
+### Features
+
+* update table ([#66](https://github.com/multiformats/js-multicodec/issues/66)) ([31fa83e](https://github.com/multiformats/js-multicodec/commit/31fa83e8308315fff58c9c7ae3d8f0760cfb47e6))
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/multiformats/js-multicodec/compare/v2.0.0...v2.0.1) (2020-09-07)
 
