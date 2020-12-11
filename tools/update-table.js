@@ -46,7 +46,7 @@ const run = async () => {
  * Number for all available codecs
  *
  * @typedef { ${codes.join(' | ')} } CodecNumber
-/
+ */
 
 /**
  * @type { Record<CodecName,CodecNumber> }
