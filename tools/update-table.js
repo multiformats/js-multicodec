@@ -17,7 +17,7 @@ const run = async () => {
       return [name.trim(), tag.trim(), code.trim()]
     })
     .reduce((acc, l, index, arr) => {
-      names.push(`"${l[0]}"`)
+      names.push(`'${l[0]}'`)
       codes.push(`${l[2].replace('\'', '')}`)
       acc += `  '${l[0]}': ${l[2].replace('\'', '')}`
 
@@ -27,10 +27,7 @@ const run = async () => {
       return acc
     }, '')
 
-  const typesTemplate = `/* eslint quote-props: off */
-'use strict'
-
-/**
+  const typesTemplate = `/**
  * Constant names for all available codecs
  */
 export type CodecConstant = ${names.map(n => `${n.toUpperCase().replace(/-/g, '_')}`).join(' | ')};
