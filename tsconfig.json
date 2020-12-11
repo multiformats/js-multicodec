@@ -7,7 +7,6 @@
       "src/base-table.json"
     ],
     "include": [
-      "test", // remove this line if you don't want to type-check tests
       "src"
     ]
 }
