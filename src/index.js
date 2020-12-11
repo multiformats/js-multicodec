@@ -29,6 +29,7 @@ exports = module.exports
 exports.addPrefix = (multicodecStrOrCode, data) => {
   let prefix
 
+  // @ts-ignore: TS2358
   if (multicodecStrOrCode instanceof Uint8Array) {
     prefix = util.varintUint8ArrayEncode(multicodecStrOrCode)
   } else {
