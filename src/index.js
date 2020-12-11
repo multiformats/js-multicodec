@@ -11,6 +11,9 @@
  */
 'use strict'
 
+/** @typedef {import('./types').CodecName} CodecName */
+/** @typedef {import('./types').CodecNumber} CodecNumber */
+
 const varint = require('varint')
 const intTable = require('./int-table')
 const codecNameToCodeVarint = require('./varint-table')
@@ -141,6 +144,3 @@ module.exports = {
   print,
   ...constants
 }
-
-/** @typedef {import('./types').CodecName} CodecName */
-/** @typedef {import('./types').CodecNumber} CodecNumber */

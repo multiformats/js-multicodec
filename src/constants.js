@@ -1,5 +1,8 @@
 'use strict'
 
+/** @typedef {import('./types').CodecConstant} CodecConstant */
+/** @typedef {import('./types').CodecNumber} CodecNumber */
+
 const table = require('./base-table.json')
 
 const constants = /** @type {Record<CodecConstant, CodecNumber>} */({})
@@ -10,6 +13,3 @@ for (const [name, code] of Object.entries(table)) {
 }
 
 module.exports = Object.freeze(constants)
-
-/** @typedef {import('./types').CodecConstant} CodecConstant */
-/** @typedef {import('./types').CodecNumber} CodecNumber */

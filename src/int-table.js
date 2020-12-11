@@ -1,5 +1,8 @@
 'use strict'
 
+/** @typedef {import('./types').CodecName} CodecName */
+/** @typedef {import('./types').CodecNumber} CodecNumber */
+
 const baseTable = require('./base-table.json')
 
 /**
@@ -13,6 +16,3 @@ for (const encodingName in baseTable) {
 }
 
 module.exports = Object.freeze(nameTable)
-
-/** @typedef {import('./types').CodecName} CodecName */
-/** @typedef {import('./types').CodecNumber} CodecNumber */
