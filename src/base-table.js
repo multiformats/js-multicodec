@@ -3,7 +3,7 @@
 'use strict'
 
 /**
- * @type {import('./generated-types').NameNumberMap}
+ * @type {import('./generated-types').NameCodeMap}
  */
 const baseTable = Object.freeze({
   'identity': 0x00,

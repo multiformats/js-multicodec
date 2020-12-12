@@ -2,7 +2,7 @@
 'use strict'
 
 /** @typedef {import("../src/generated-types").CodecName} CodecName */
-/** @typedef {import("../src/generated-types").CodecNumber} CodecNumber */
+/** @typedef {import("../src/generated-types").CodecCode} CodecCode */
 
 const { expect } = require('aegir/utils/chai')
 const multicodec = require('../src')
