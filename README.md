@@ -45,7 +45,7 @@ console.log(multicodec.DAG_CBOR)
 // 113
 
 // To get the string representation of a codec, e.g. for error messages:
-console.log(multicodec.print[113])
+console.log(multicodec.getNameFromCode(113))
 // dag-cbor
 ```
 

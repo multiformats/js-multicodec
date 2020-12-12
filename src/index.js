@@ -38,6 +38,7 @@ function addPrefix (multicodecStrOrCode, data) {
       throw new Error('multicodec not recognized')
     }
   }
+
   return uint8ArrayConcat([prefix, data], prefix.length + data.length)
 }
 
@@ -53,27 +54,27 @@ function rmPrefix (data) {
 }
 
 /**
- * Get the codec of the prefixed data.
+ * Get the codec name of the prefixed data.
  *
  * @param {Uint8Array} prefixedData
  * @returns {CodecName}
  */
-function getCodec (prefixedData) {
+function getNameFromData (prefixedData) {
   const code = varint.decode(prefixedData)
-  const codecName = codeToName[code]
-  if (codecName === undefined) {
-    throw new Error(`Code ${code} not found`)
+  const name = codeToName[code]
+  if (name === undefined) {
+    throw new Error(`Code "${code}" not found`)
   }
-  return codecName
+  return name
 }
 
 /**
- * Get the name of the codec (human friendly).
+ * Get the codec name from a code.
  *
  * @param {CodecCode} codec
- * @returns {CodecName|undefined}
+ * @returns {CodecName}
  */
-function getName (codec) {
+function getNameFromCode (codec) {
   return codeToName[codec]
 }
 
@@ -83,10 +84,10 @@ function getName (codec) {
  * @param {CodecName} name
  * @returns {CodecCode}
  */
-function getNumber (name) {
+function getCodeFromName (name) {
   const code = nameToCode[name]
   if (code === undefined) {
-    throw new Error('Codec `' + name + '` not found')
+    throw new Error(`Codec "${name}" not found`)
   }
   return code
 }
@@ -97,20 +98,20 @@ function getNumber (name) {
  * @param {Uint8Array} prefixedData
  * @returns {CodecCode}
  */
-function getCode (prefixedData) {
+function getCodeFromData (prefixedData) {
   return varint.decode(prefixedData)
 }
 
 /**
  * Get the code as varint of a codec name.
  *
- * @param {CodecName} codecName
+ * @param {CodecName} name
  * @returns {Uint8Array}
  */
-function getCodeVarint (codecName) {
-  const code = nameToVarint[codecName]
+function getVarintFromName (name) {
+  const code = nameToVarint[name]
   if (code === undefined) {
-    throw new Error('Codec `' + codecName + '` not found')
+    throw new Error(`Codec "${name}" not found`)
   }
   return code
 }
@@ -119,25 +120,96 @@ function getCodeVarint (codecName) {
  * Get the varint of a code.
  *
  * @param {CodecCode} code
+ * @returns {Uint8Array}
+ */
+function getVarintFromCode (code) {
+  return util.varintEncode(code)
+}
+
+/**
+ * Get the codec name of the prefixed data.
+ *
+ * @deprecated use getNameFromData instead.
+ * @param {Uint8Array} prefixedData
+ * @returns {CodecName}
+ */
+function getCodec (prefixedData) {
+  return getNameFromData(prefixedData)
+}
+
+/**
+ * Get the codec name from a code.
+ *
+ * @deprecated use getNameFromCode instead.
+ * @param {CodecCode} codec
+ * @returns {CodecName}
+ */
+function getName (codec) {
+  return getNameFromCode(codec)
+}
+
+/**
+ * Get the code of the codec
+ *
+ * @deprecated use getCodeFromName instead.
+ * @param {CodecName} name
+ * @returns {CodecCode}
+ */
+function getNumber (name) {
+  return getCodeFromName(name)
+}
+
+/**
+ * Get the code of the prefixed data.
+ *
+ * @deprecated use getCodeFromData instead.
+ * @param {Uint8Array} prefixedData
+ * @returns {CodecCode}
+ */
+function getCode (prefixedData) {
+  return getCodeFromData(prefixedData)
+}
+
+/**
+ * Get the code as varint of a codec name.
+ *
+ * @deprecated use getVarintFromName instead.
+ * @param {CodecName} name
+ * @returns {Uint8Array}
+ */
+function getCodeVarint (name) {
+  return getVarintFromName(name)
+}
+
+/**
+ * Get the varint of a code.
+ *
+ * @deprecated use getVarintFromCode instead.
+ * @param {CodecCode} code
  * @returns {Array.<number>}
  */
 function getVarint (code) {
-  return varint.encode(code)
+  return Array.from(getVarintFromCode(code))
 }
 
 module.exports = {
   addPrefix,
   rmPrefix,
+  getNameFromData,
+  getNameFromCode,
+  getCodeFromName,
+  getCodeFromData,
+  getVarintFromName,
+  getVarintFromCode,
+  // Deprecated
   getCodec,
   getName,
   getNumber,
   getCode,
   getCodeVarint,
   getVarint,
-
   // Make the constants top-level constants
   ...constantToCode,
-
   // Export the maps
   nameToVarint,
   nameToCode,
