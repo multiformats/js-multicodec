@@ -15,10 +15,9 @@
 /** @typedef {import('./generated-types').CodecCode} CodecCode */
 
 const varint = require('varint')
-const intTable = require('./int-table')
-const codecNameToCodeVarint = require('./varint-table')
-const util = require('./util')
 const uint8ArrayConcat = require('uint8arrays/concat')
+const util = require('./util')
+const { nameToVarint, constantToCode, nameToCode, codeToName } = require('./maps')
 
 /**
  * Prefix a buffer with a multicodec-packed.
@@ -33,8 +32,8 @@ function addPrefix (multicodecStrOrCode, data) {
   if (multicodecStrOrCode instanceof Uint8Array) {
     prefix = util.varintUint8ArrayEncode(multicodecStrOrCode)
   } else {
-    if (codecNameToCodeVarint[multicodecStrOrCode]) {
-      prefix = codecNameToCodeVarint[multicodecStrOrCode]
+    if (nameToVarint[multicodecStrOrCode]) {
+      prefix = nameToVarint[multicodecStrOrCode]
     } else {
       throw new Error('multicodec not recognized')
     }
@@ -61,7 +60,7 @@ function rmPrefix (data) {
  */
 function getCodec (prefixedData) {
   const code = varint.decode(prefixedData)
-  const codecName = intTable.get(code)
+  const codecName = codeToName[code]
   if (codecName === undefined) {
     throw new Error(`Code ${code} not found`)
   }
@@ -75,7 +74,7 @@ function getCodec (prefixedData) {
  * @returns {CodecName|undefined}
  */
 function getName (codec) {
-  return intTable.get(codec)
+  return codeToName[codec]
 }
 
 /**
@@ -85,11 +84,11 @@ function getName (codec) {
  * @returns {CodecCode}
  */
 function getNumber (name) {
-  const code = codecNameToCodeVarint[name]
+  const code = nameToCode[name]
   if (code === undefined) {
     throw new Error('Codec `' + name + '` not found')
   }
-  return varint.decode(code)
+  return code
 }
 
 /**
@@ -109,7 +108,7 @@ function getCode (prefixedData) {
  * @returns {Uint8Array}
  */
 function getCodeVarint (codecName) {
-  const code = codecNameToCodeVarint[codecName]
+  const code = nameToVarint[codecName]
   if (code === undefined) {
     throw new Error('Codec `' + codecName + '` not found')
   }
@@ -126,9 +125,6 @@ function getVarint (code) {
   return varint.encode(code)
 }
 
-// Make the constants top-level constants
-const constants = require('./constants')
-
 module.exports = {
   addPrefix,
   rmPrefix,
@@ -138,5 +134,12 @@ module.exports = {
   getCode,
   getCodeVarint,
   getVarint,
-  ...constants
+
+  // Make the constants top-level constants
+  ...constantToCode,
+
+  // Export the maps
+  nameToVarint,
+  nameToCode,
+  codeToName
 }
