@@ -7,7 +7,7 @@
 const { expect } = require('aegir/utils/chai')
 const multicodec = require('../src')
 const uint8ArrayFromString = require('uint8arrays/from-string')
-const { baseTable } = require('../src/base-table')
+const { nameToCode } = require('../src/maps')
 
 describe('multicodec', () => {
   it('add prefix through multicodec (string)', () => {
@@ -61,8 +61,8 @@ describe('multicodec', () => {
   })
 
   it('returns all codec numbers from names', () => {
-    for (const name in baseTable) {
-      expect(multicodec.getNumber(/** @type {CodecName} */(name))).to.eql(baseTable[name])
+    for (const name in nameToCode) {
+      expect(multicodec.getNumber(/** @type {CodecName} */(name))).to.eql(nameToCode[name])
     }
   })
 

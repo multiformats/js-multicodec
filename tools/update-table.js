@@ -65,7 +65,7 @@ module.exports = { baseTable }
 `
 
   fs.writeFileSync(path.join(__dirname, '../src/generated-types.ts'), typesTemplate)
-  fs.writeFileSync(path.join(__dirname, '../src/base-table.js'), tableTemplate)
+  fs.writeFileSync(path.join(__dirname, '../src/generated-table.js'), tableTemplate)
 }
 
 run()
