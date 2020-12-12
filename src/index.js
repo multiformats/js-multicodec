@@ -12,7 +12,7 @@
 'use strict'
 
 /** @typedef {import('./generated-types').CodecName} CodecName */
-/** @typedef {import('./generated-types').CodecNumber} CodecNumber */
+/** @typedef {import('./generated-types').CodecCode} CodecCode */
 
 const varint = require('varint')
 const intTable = require('./int-table')
@@ -71,7 +71,7 @@ function getCodec (prefixedData) {
 /**
  * Get the name of the codec (human friendly).
  *
- * @param {CodecNumber} codec
+ * @param {CodecCode} codec
  * @returns {CodecName|undefined}
  */
 function getName (codec) {
@@ -82,7 +82,7 @@ function getName (codec) {
  * Get the code of the codec
  *
  * @param {CodecName} name
- * @returns {CodecNumber}
+ * @returns {CodecCode}
  */
 function getNumber (name) {
   const code = codecNameToCodeVarint[name]
@@ -96,7 +96,7 @@ function getNumber (name) {
  * Get the code of the prefixed data.
  *
  * @param {Uint8Array} prefixedData
- * @returns {CodecNumber}
+ * @returns {CodecCode}
  */
 function getCode (prefixedData) {
   return varint.decode(prefixedData)
@@ -119,7 +119,7 @@ function getCodeVarint (codecName) {
 /**
  * Get the varint of a code.
  *
- * @param {CodecNumber} code
+ * @param {CodecCode} code
  * @returns {Array.<number>}
  */
 function getVarint (code) {

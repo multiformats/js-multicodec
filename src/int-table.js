@@ -1,12 +1,12 @@
 'use strict'
 
 /** @typedef {import('./generated-types').CodecName} CodecName */
-/** @typedef {import('./generated-types').CodecNumber} CodecNumber */
+/** @typedef {import('./generated-types').CodecCode} CodecCode */
 
 const { baseTable } = require('./base-table')
 
 /**
- * @type {Map<CodecNumber,CodecName>}
+ * @type {Map<CodecCode,CodecName>}
  */
 const nameTable = new Map()
 

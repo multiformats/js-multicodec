@@ -1,10 +1,10 @@
 'use strict'
 
-/** @typedef {import('./generated-types').ConstantNumberMap} ConstantNumberMap */
+/** @typedef {import('./generated-types').ConstantCodeMap} ConstantCodeMap */
 
 const { baseTable } = require('./base-table')
 
-const constants = /** @type {ConstantNumberMap} */({})
+const constants = /** @type {ConstantCodeMap} */({})
 
 for (const [name, code] of Object.entries(baseTable)) {
   const constant = name.toUpperCase().replace(/-/g, '_')
