@@ -49,7 +49,7 @@ function addPrefix (multicodecStrOrCode, data) {
  * @returns {Uint8Array}
  */
 function rmPrefix (data) {
-  varint.decode(/** @type {Buffer} */(data))
+  varint.decode(data)
   return data.slice(varint.decode.bytes)
 }
 
@@ -60,7 +60,7 @@ function rmPrefix (data) {
  * @returns {CodecName}
  */
 function getNameFromData (prefixedData) {
-  const code = /** @type {CodecCode} */(varint.decode(/** @type {Buffer} */(prefixedData)))
+  const code = varint.decode(prefixedData)
   const name = codeToName[code]
   if (name === undefined) {
     throw new Error(`Code "${code}" not found`)
@@ -99,7 +99,7 @@ function getCodeFromName (name) {
  * @returns {CodecCode}
  */
 function getCodeFromData (prefixedData) {
-  return /** @type {CodecCode} */(varint.decode(/** @type {Buffer} */(prefixedData)))
+  return varint.decode(prefixedData)
 }
 
 /**

@@ -61,9 +61,8 @@ describe('multicodec', () => {
   })
 
   it('returns all codec numbers from names', () => {
-    // eslint-disable-next-line guard-for-in
     for (const name in nameToCode) {
-      expect(multicodec.getCodeFromName(/** @type {CodecName} */(name))).to.eql(nameToCode[/** @type {CodecName} */(name)])
+      expect(multicodec.getCodeFromName(/** @type {CodecName} */(name))).to.eql(nameToCode[name])
     }
   })
 
