@@ -104,6 +104,7 @@ const baseTable = Object.freeze({
   'udt': 0x012d,
   'utp': 0x012e,
   'unix': 0x0190,
+  'thread': 0x0196,
   'p2p': 0x01a5,
   'ipfs': 0x01a5,
   'https': 0x01bb,
