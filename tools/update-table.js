@@ -32,17 +32,17 @@ const run = async () => {
 /**
  * Constant names for all available codecs
  */
-export type CodecConstant = ${names.map(n => `${n.toUpperCase().replace(/-/g, '_')}`).join(' | ')};
+export type CodecConstant = ${names.map(n => `${n.toUpperCase().replace(/-/g, '_')}`).join(' | ')}
 
 /**
  * Names for all available codecs
  */
-export type CodecName = ${names.join(' | ')};
+export type CodecName = ${names.join(' | ')}
 
 /**
  * Number for all available codecs
  */
-export type CodecCode = ${codes.join(' | ')};
+export type CodecCode = ${codes.join(' | ')}
 
 export type ConstantCodeMap = Record<CodecConstant, CodecCode>
 export type NameUint8ArrayMap = Record<CodecName, Uint8Array>
@@ -64,7 +64,7 @@ ${processed}
 module.exports = { baseTable }
 `
 
-  fs.writeFileSync(path.join(__dirname, '../src/generated-types.ts'), typesTemplate)
+  fs.writeFileSync(path.join(__dirname, '../src/generated-types.d.ts'), typesTemplate)
   fs.writeFileSync(path.join(__dirname, '../src/generated-table.js'), tableTemplate)
 }
 
