@@ -1,3 +1,12 @@
+## [2.1.2](https://github.com/multiformats/js-multicodec/compare/v2.1.1...v2.1.2) (2021-03-02)
+
+
+### Bug Fixes
+
+* fix maps types ([d500879](https://github.com/multiformats/js-multicodec/commit/d5008790124bad14c45fe93ace31172cd3a7ea72))
+
+
+
 ## [2.1.1](https://github.com/multiformats/js-multicodec/compare/v2.1.0...v2.1.1) (2021-03-02)
 
 
