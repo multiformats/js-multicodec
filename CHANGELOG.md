@@ -1,3 +1,13 @@
+# [3.0.0](https://github.com/multiformats/js-multicodec/compare/v2.1.2...v3.0.0) (2021-03-02)
+
+
+### Reverts
+
+* Revert "fix: fix maps types" ([b902a59](https://github.com/multiformats/js-multicodec/commit/b902a5931e1a3aff0ea1d74c79a5c9925cbfc715))
+* Revert "fix: update aegir and revert varint" ([cf9a68d](https://github.com/multiformats/js-multicodec/commit/cf9a68de4cfb175deb6a6021c525fed46425a65f))
+
+
+
 ## [2.1.2](https://github.com/multiformats/js-multicodec/compare/v2.1.1...v2.1.2) (2021-03-02)
 
 
