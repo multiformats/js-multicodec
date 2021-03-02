@@ -1,6 +1,6 @@
 {
   "name": "multicodec",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "JavaScript implementation of the multicodec specification",
   "leadMaintainer": "Henrique Dias <hacdias@gmail.com>",
   "main": "src/index.js",
