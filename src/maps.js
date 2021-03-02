@@ -27,9 +27,13 @@ for (const name in baseTable) {
   }
 }
 
+Object.freeze(nameToVarint)
+Object.freeze(constantToCode)
+Object.freeze(codeToName)
+const nameToCode = Object.freeze(baseTable)
 module.exports = {
-  nameToVarint: Object.freeze(nameToVarint),
-  constantToCode: Object.freeze(constantToCode),
-  nameToCode: Object.freeze(baseTable),
-  codeToName: Object.freeze(codeToName)
+  nameToVarint,
+  constantToCode,
+  nameToCode,
+  codeToName
 }
