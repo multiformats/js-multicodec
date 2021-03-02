@@ -1,3 +1,17 @@
+## [2.1.1](https://github.com/multiformats/js-multicodec/compare/v2.1.0...v2.1.1) (2021-03-02)
+
+
+### Bug Fixes
+
+* update aegir and revert varint ([d0a413f](https://github.com/multiformats/js-multicodec/commit/d0a413f5154d5138c857c36e03368a1125ed5781))
+
+
+### Features
+
+* export tables and dedup code ([d26166b](https://github.com/multiformats/js-multicodec/commit/d26166bf298f330e0b16171c589d3dca3d24b6e5))
+
+
+
 # [2.1.0](https://github.com/multiformats/js-multicodec/compare/v2.0.4...v2.1.0) (2020-12-11)
 
 
