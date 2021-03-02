@@ -1,3 +1,12 @@
+## [2.1.3](https://github.com/multiformats/js-multicodec/compare/v2.1.0...v2.1.3) (2021-03-02)
+
+
+### Bug Fixes
+
+* fix broken release ([3f91ed1](https://github.com/multiformats/js-multicodec/commit/3f91ed16c84893508b8d4c92e9d6c38cd41d35b0))
+
+
+
 # [2.1.0](https://github.com/multiformats/js-multicodec/compare/v2.0.4...v2.1.0) (2020-12-11)
 
 
