@@ -52,13 +52,14 @@
   "homepage": "https://github.com/multiformats/js-multicodec#readme",
   "dependencies": {
     "uint8arrays": "^2.1.3",
-    "varint": "^5.0.2"
+    "varint": "^6.0.0"
   },
   "devDependencies": {
-    "@types/varint": "^5.0.0",
-    "aegir": "^31.0.1",
+    "@types/varint": "^6.0.0",
+    "aegir": "^32.2.0",
     "bent": "^7.3.12",
-    "pre-push": "~0.1.1"
+    "pre-push": "~0.1.1",
+    "util": "^0.12.3"
   },
   "eslintConfig": {
     "extends": "ipfs"
