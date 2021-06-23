@@ -6,7 +6,7 @@
 
 const { expect } = require('aegir/utils/chai')
 const multicodec = require('../src')
-const uint8ArrayFromString = require('uint8arrays/from-string')
+const { fromString: uint8ArrayFromString } = require('uint8arrays/from-string')
 const { nameToCode } = require('../src/maps')
 
 describe('multicodec', () => {

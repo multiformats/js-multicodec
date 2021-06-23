@@ -15,7 +15,7 @@
 /** @typedef {import('./generated-types').CodecCode} CodecCode */
 
 const varint = require('varint')
-const uint8ArrayConcat = require('uint8arrays/concat')
+const { concat: uint8ArrayConcat } = require('uint8arrays/concat')
 const util = require('./util')
 const { nameToVarint, constantToCode, nameToCode, codeToName } = require('./maps')
 

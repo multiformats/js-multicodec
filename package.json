@@ -51,7 +51,7 @@
   },
   "homepage": "https://github.com/multiformats/js-multicodec#readme",
   "dependencies": {
-    "uint8arrays": "^2.1.5",
+    "uint8arrays": "^3.0.0",
     "varint": "^6.0.0"
   },
   "devDependencies": {
