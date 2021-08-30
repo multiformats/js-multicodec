@@ -1,3 +1,12 @@
+# [3.2.0](https://github.com/multiformats/js-multicodec/compare/v3.1.1...v3.2.0) (2021-08-30)
+
+
+### Features
+
+* update table for arweave-ns ([#81](https://github.com/multiformats/js-multicodec/issues/81)) ([9d9f3e5](https://github.com/multiformats/js-multicodec/commit/9d9f3e5eb6c48fec42b7f584137a84c5813135b6))
+
+
+
 ## [3.1.1](https://github.com/multiformats/js-multicodec/compare/v3.1.0...v3.1.1) (2021-08-24)
 
 
