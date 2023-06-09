@@ -14,8 +14,7 @@
     "build": "aegir build",
     "test": "aegir test",
     "test:node": "aegir test --target node",
-    "test:browser": "aegir test --target browser",
-    "update-table": "node tools/update-table.js"
+    "test:browser": "aegir test --target browser"
   },
   "pre-push": [
     "lint",
