@@ -9,6 +9,10 @@
     "dist"
   ],
   "scripts": {
+    "prepare": "npm run generate",
+    "generate": "npm run generate:json && npm run generate:typescript",
+    "generate:json": "csvtojson ./src/multicodec/table.csv > ./src/multicodecs.json",
+    "generate:typescript": "quicktype ./src/multicodecs.json -o ./src/types.d.ts --top-level 'Multicodec' --just-types --nice-property-names --explicit-unions --prefer-unions --prefer-types",
     "lint": "aegir lint",
     "release": "aegir release",
     "build": "aegir build",
@@ -38,10 +42,10 @@
     "url": "https://github.com/multiformats/js-multicodec/issues"
   },
   "homepage": "https://github.com/multiformats/js-multicodec#readme",
-  "dependencies": {
-  },
   "devDependencies": {
-    "aegir": "^39.0.9"
+    "aegir": "^39.0.9",
+    "csvtojson": "^2.0.10",
+    "quicktype": "^23.0.47"
   },
   "contributors": [
     "Henrique Dias <hacdias@gmail.com>",
