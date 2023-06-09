@@ -4,28 +4,17 @@
   "description": "JavaScript implementation of the multicodec specification",
   "leadMaintainer": "Henrique Dias <hacdias@gmail.com>",
   "main": "src/index.js",
-  "types": "dist/src/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "src/*": [
-        "dist/src/*",
-        "dist/src/*/index"
-      ],
-      "src/": [
-        "dist/src/index"
-      ]
-    }
-  },
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
     "lint": "aegir lint",
+    "release": "aegir release",
+    "build": "aegir build",
     "test": "aegir test",
     "test:node": "aegir test --target node",
     "test:browser": "aegir test --target browser",
-    "build": "aegir build",
-    "docs": "aegir docs",
-    "release": "aegir release",
-    "release-minor": "aegir release --type minor",
-    "release-major": "aegir release --type major",
     "update-table": "node tools/update-table.js"
   },
   "pre-push": [
@@ -56,18 +45,10 @@
   },
   "devDependencies": {
     "@types/varint": "^6.0.0",
-    "aegir": "^32.2.0",
+    "aegir": "^39.0.9",
     "bent": "^7.3.12",
     "pre-push": "~0.1.1",
     "util": "^0.12.3"
-  },
-  "eslintConfig": {
-    "extends": "ipfs"
-  },
-  "aegir": {
-    "build": {
-      "bundlesizeMax": "15kB"
-    }
   },
   "contributors": [
     "Henrique Dias <hacdias@gmail.com>",
