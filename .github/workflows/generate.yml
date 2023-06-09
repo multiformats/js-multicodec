@@ -1,0 +1,24 @@
+Generate
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+    - run: git submodule update --init --recursive --remote
+    - run: npm run generate
+    - uses: peter-evans/create-pull-request@v5
+      with:
+        commit-message: "chore: update submodules and npm run generate"
+        branch: generate
+        title: "Changes by ${{ github.workflow }} workflow"
+        body: "Automated changes by [${{ github.workflow }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) workflow run"
