@@ -40,15 +40,9 @@
   },
   "homepage": "https://github.com/multiformats/js-multicodec#readme",
   "dependencies": {
-    "uint8arrays": "^3.0.0",
-    "varint": "^6.0.0"
   },
   "devDependencies": {
-    "@types/varint": "^6.0.0",
-    "aegir": "^39.0.9",
-    "bent": "^7.3.12",
-    "pre-push": "~0.1.1",
-    "util": "^0.12.3"
+    "aegir": "^39.0.9"
   },
   "contributors": [
     "Henrique Dias <hacdias@gmail.com>",
