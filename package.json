@@ -2,7 +2,6 @@
   "name": "multicodec",
   "version": "3.2.1",
   "description": "JavaScript implementation of the multicodec specification",
-  "leadMaintainer": "Henrique Dias <hacdias@gmail.com>",
   "main": "src/index.js",
   "files": [
     "src",
@@ -69,6 +68,7 @@
     "Marcin Rataj <lidel@lidel.org>",
     "Mitrasish Mukherjee <34746546+rekpero@users.noreply.github.com>",
     "Peter-Jan Brone <peter-jan@settlemint.com>",
-    "Łukasz Magiera <magik6k@users.noreply.github.com>"
+    "Łukasz Magiera <magik6k@users.noreply.github.com>",
+    "Darryl Yeo <dev@darryl-yeo.com>"
   ]
 }
