@@ -1,32 +1,23 @@
 {
   "name": "multicodec",
-  "version": "3.2.1",
+  "version": "4.0.0",
   "description": "JavaScript implementation of the multicodec specification",
-  "leadMaintainer": "Henrique Dias <hacdias@gmail.com>",
   "main": "src/index.js",
-  "types": "dist/src/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "src/*": [
-        "dist/src/*",
-        "dist/src/*/index"
-      ],
-      "src/": [
-        "dist/src/index"
-      ]
-    }
-  },
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
+    "prepare": "npm run generate",
+    "generate": "npm run generate:json && npm run generate:typescript",
+    "generate:json": "csvtojson ./src/multicodec/table.csv > ./src/multicodecs.json",
+    "generate:typescript": "quicktype ./src/multicodecs.json -o ./src/types.d.ts --top-level 'Multicodec' --just-types --nice-property-names --explicit-unions --prefer-unions --prefer-types",
     "lint": "aegir lint",
+    "release": "aegir release",
+    "build": "aegir build",
     "test": "aegir test",
     "test:node": "aegir test --target node",
-    "test:browser": "aegir test --target browser",
-    "build": "aegir build",
-    "docs": "aegir docs",
-    "release": "aegir release",
-    "release-minor": "aegir release --type minor",
-    "release-major": "aegir release --type major",
-    "update-table": "node tools/update-table.js"
+    "test:browser": "aegir test --target browser"
   },
   "pre-push": [
     "lint",
@@ -50,24 +41,10 @@
     "url": "https://github.com/multiformats/js-multicodec/issues"
   },
   "homepage": "https://github.com/multiformats/js-multicodec#readme",
-  "dependencies": {
-    "uint8arrays": "^3.0.0",
-    "varint": "^6.0.0"
-  },
   "devDependencies": {
-    "@types/varint": "^6.0.0",
-    "aegir": "^32.2.0",
-    "bent": "^7.3.12",
-    "pre-push": "~0.1.1",
-    "util": "^0.12.3"
-  },
-  "eslintConfig": {
-    "extends": "ipfs"
-  },
-  "aegir": {
-    "build": {
-      "bundlesizeMax": "15kB"
-    }
+    "aegir": "^39.0.9",
+    "csvtojson": "^2.0.10",
+    "quicktype": "^23.0.47"
   },
   "contributors": [
     "Henrique Dias <hacdias@gmail.com>",
@@ -91,6 +68,7 @@
     "Marcin Rataj <lidel@lidel.org>",
     "Mitrasish Mukherjee <34746546+rekpero@users.noreply.github.com>",
     "Peter-Jan Brone <peter-jan@settlemint.com>",
-    "Łukasz Magiera <magik6k@users.noreply.github.com>"
+    "Łukasz Magiera <magik6k@users.noreply.github.com>",
+    "Darryl Yeo <dev@darryl-yeo.com>"
   ]
 }
